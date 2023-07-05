@@ -22,7 +22,8 @@ contract Storage{
     function store(uint256 _favoriteNumber) public{
         MyFavoriteNumber = _favoriteNumber;
     }
-    
+
+    //accessing the state variable
     function retrieve() public view returns(uint256){
         return MyFavoriteNumber; 
     }

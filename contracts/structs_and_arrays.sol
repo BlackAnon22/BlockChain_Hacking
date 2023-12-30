@@ -10,7 +10,7 @@ contract simpleStorage{
     }
     Person[] public listofPeople; // instead of computing each person one by one, an array is created
 
-    // this function adds people and updates the array
+    // this function adds people and updates the array, then we can use indexing to grab a person's favorite number
     function addPeople(string memory _name, uint256 _listoffavoriteNumbers) public { 
         listofPeople.push(Person(_listoffavoriteNumbers,_name));
     }

@@ -5,7 +5,7 @@ contract myContract {
     
     uint public num; //by default num is set to zero
 
-    function viewNum() public view returns (uint){ // we are trying to read the vallue of the state variable
+    function viewNum() public view returns (uint){ // we are trying to read the value of the state variable
         return num; // this returns the value of the  state variable
     }
 

@@ -10,7 +10,7 @@ contract simpleStorage{
     }
     Person[] public listofPeople;  // instead of computing each person one by one, an array is created
 
-    mapping(string => uint256) public nameToFavoriteNumber; // if we had over 1000 people, indexing through won't work. So, mapping can be used. If you search for a particular string you get the result
+    mapping(string => uint256) public nameToFavoriteNumber; // if we had over 1000 people, indexing through won't work. So, mapping can be used. If you search for a particular person you'll get the favorite number
 
     // this function adds people and updates the array, then we can use indexing to grab a person's favorite number
     function addPerson(string memory _name,uint256 _listoffavoriteNumbers) public {

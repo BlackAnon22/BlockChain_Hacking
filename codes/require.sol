@@ -10,7 +10,7 @@ contract FundMe {
     // Allow users to send $
     // Have a mininum $ sent, $5
     function fund() public payable  { 
-        require(msg.value > 1e18, "didn't send enough ETH"); // 1e18 = 1 ETH = 1000000000 Gwei = 1000000000000000000 Wei
+        require(msg.value > 1e18); // 1e18 = 1 ETH = 1000000000 Gwei = 1000000000000000000 Wei
 
     }
 }

@@ -16,7 +16,7 @@ contract FundMe {
     // Allow users to send $
     // Have a mininum $ sent, $5
     function fund() public payable  { 
-        require(msg.value > minimumUsd, "didn't send enough ETH");
+        require(msg.value > minimumUsd, "did not send enough ETH");
 
     }
 

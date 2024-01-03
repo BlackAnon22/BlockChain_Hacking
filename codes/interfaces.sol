@@ -1,4 +1,4 @@
-// We use interfaces to get ABI-Application Binary Interface
+// We use interfaces to get the ABI-Application Binary Interface
 
 // Get funds from users
 // Withdraw Funds

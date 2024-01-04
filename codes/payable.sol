@@ -1,4 +1,4 @@
-// The "payable" keyword allows a function to accept the native blockchain currency
+// The "payable" keyword allows a function to accept the native blockchain currency (ETH,Arbitrum etc)
 
 //SPDX-License-Identifier: MIT
 

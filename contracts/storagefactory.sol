@@ -15,7 +15,7 @@ contract StorageFactory{
     function sfStore(uint256 _simpleStorageIndex, uint256 _newSimpleStorageNumber) public {
         //SimpleStorage mySimpleStorage = listofsimpleStorageContracts[_simpleStorageIndex];
         //mySimpleStorage.store(_newSimpleStorageNumber);
-        listofsimpleStorageContracts[_simpleStorageIndex].store(_newSimpleStorageNumber); //this is more condensed, still works tho 
+        listofsimpleStorageContracts[_simpleStorageIndex].store(_newSimpleStorageNumber); //this is more condensed, commented code also works tho 
     }
 
      //retrieves a number from a specific SimpleStorage contract identified by its index in the array.

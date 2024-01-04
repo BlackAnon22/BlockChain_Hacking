@@ -1,4 +1,4 @@
-//This is a contract that allows us to store our favorite number and some different people's favorite number
+//This is a contract that allows us to store our favorite number and different people's favorite number
 
 //SPDX-License-Identifier: MIT
 pragma solidity 0.8.19; //solidity version

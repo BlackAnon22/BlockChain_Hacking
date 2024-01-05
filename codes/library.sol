@@ -20,7 +20,7 @@ library PriceConverter { // library can't have any state variable because all fu
     function getConversionRate(uint256 ethAmount) internal view returns(uint256) {
         // Lets say 1 ETH (Amount) = 2000_000000000000000000 (Price)
         uint256 ethPrice = getPrice();
-        // (2000_000000000000000000 * 1_000000000000000000) / 1e18; = $2000 = 1ETH
+        // (2000_000000000000000000 * 1_000000000000000000) / 1e18 = $2000 = 1ETH
         uint256 ethAmountInUsd = (ethPrice * ethAmount) / 1e18;
         return ethAmountInUsd;
 

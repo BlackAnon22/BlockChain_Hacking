@@ -1,4 +1,5 @@
 // This is going to be a library, a price converter library
+// Libraries are similar to contracts, but you can't declare any state variable and you can't send ether.
 
 // SPDX-License-Identifier: MIT
 

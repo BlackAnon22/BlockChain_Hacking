@@ -14,3 +14,18 @@ contract SafeMathTester {
         bigNumber = bigNumber + 1; // this works for solidity versions before 0.8.0
     }
 }
+
+
+// This should work for solidity versions 0.8.0 and higher
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract SafeMathTester {
+
+    // 255 is the biggest number that can be fit in a uint8
+    uint8 public bigNumber = 255; // checked
+    function add() public {
+        unchecked {bigNumber = bigNumber + 1;} // this works for solidity versions from 0.8.0
+    }
+}

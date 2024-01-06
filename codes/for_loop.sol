@@ -36,7 +36,7 @@ contract FundMe {
             addressToAmountFunded[funders] = 0; // to reset our mapping addressToAmountFunded
 
 
-        };
+        }
     }
 
 }

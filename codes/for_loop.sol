@@ -30,7 +30,7 @@ contract FundMe {
         // for(/* starting index, ending index, step amount */)
         for (uint256 funderIndex = 0; funderIndex < funders.length ; funderIndex++) {
             address funder = funders[funderIndex]; // to access the 0th element of the funders array, since it is an array of addresses
-            addressToAmountFunded[funders] = 0; // to reset our mapping addressToAmountFunded
+            addressToAmountFunded[funder] = 0; // to reset our mapping addressToAmountFunded
 
 
         }

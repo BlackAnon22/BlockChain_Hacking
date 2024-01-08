@@ -58,7 +58,7 @@ contract FundMe {
         
     }
 
-    modifier onlyOwner{
+    modifier onlyOwner {
         require(msg.sender == owner, "Sender is not owner!");
         _;
     }

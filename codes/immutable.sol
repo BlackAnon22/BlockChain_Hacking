@@ -13,6 +13,7 @@ contract FundMe {
     address[] public funders;
     mapping(address funder => uint256 amountFunded) public addressToAmountFunded;
 
+    // Immutable variable
     address public immutable i_owner;
 
     constructor() {

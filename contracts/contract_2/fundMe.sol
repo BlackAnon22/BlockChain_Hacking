@@ -1,6 +1,4 @@
-// Get funds from users
-// Withdraw Funds
-// Set a minimum funding value in usd
+// This is a contract that get funds from users, set a minimum funding value in usd and then withdraw the funds
 
 //SPDX-License-Identifier: MIT
 

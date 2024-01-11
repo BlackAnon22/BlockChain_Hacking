@@ -30,7 +30,7 @@ contract FundMe {
     // Allow users to send $
     // Have a mininum $ sent, $5
     function fund() public payable  { 
-        require(msg.value.getConversionRate() >= MINIMUM_USD, "didn't send enough ETH");
+        require(msg.value.getConversionRate() >= MINIMUM_USD, "did not send enough ETH");
         funders.push(msg.sender);
         //addressToAmountFunded[msg.sender] = addressToAmountFunded[msg.sender] + msg.value;
         addressToAmountFunded[msg.sender] += msg.value; // this is more condensed 

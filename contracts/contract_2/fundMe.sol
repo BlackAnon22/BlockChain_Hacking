@@ -49,14 +49,12 @@ contract FundMe {
 
         // To withdraw funds
 
-        // 1. transfer
-        // msg.sender = type address
-        // payable(msg.sender) == type payable address
-       // payable(msg.sender).transfer(address(this).balance);
-
-       // 2. send
-       //bool sendSuccess = payable(msg.sender).send(address(this).balance);
-       //require(sendSuccess, "Send Failed");
+         // // transfer
+        // payable(msg.sender).transfer(address(this).balance);
+        
+        // // send
+        // bool sendSuccess = payable(msg.sender).send(address(this).balance);
+        // require(sendSuccess, "Send failed");
 
        // 3.call
        (bool callSuccess, ) = payable(msg.sender).call{value: address(this).balance}("");

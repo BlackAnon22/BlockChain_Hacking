@@ -13,7 +13,7 @@ library PriceConverter { // library can't have any state variable because all fu
 
         AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
         (, int256 price,,, ) = priceFeed.latestRoundData();
-        // price variable represents the price of ETH in terms of USD, it'll return a value that looks like this 2000.00000000
+        // price variable represents the price of ETH in terms of USD, it'll return a value that looks like this 2000_00000000
         return uint256(price * 1e10);
     }
 

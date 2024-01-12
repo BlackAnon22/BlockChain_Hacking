@@ -15,7 +15,7 @@ contract SolidityTest{
     }
 
     function integerToString(uint _i) internal pure returns(string memory){
-        //checks for zero
+        // checks for zero
         if (_i == 0){
             return "0";
         }
@@ -27,16 +27,16 @@ contract SolidityTest{
             len++;
             j /= 10;
         }
-        //allocated memory string
+        // allocated memory string
         bytes memory bstr = new bytes(len);
         uint k = len - 1;
 
-        //extracts digits and converts them to ascii
+        // extracts digits and converts them to ascii
         while(_i != 0){
             bstr[k--] = byte(uint8(48 + _i % 10));
             _i /= 10;
         }
-        //converts bytes array to strings
+        // converts bytes array to strings
         return string(bstr);
     }
 }

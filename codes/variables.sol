@@ -9,7 +9,7 @@ contract MyContract{ // The first line is declaring a state variable
     
     }
     
-    // we'll be using view keyword since we are not making changes to the state variabble and we are only declaring a local variable and setting its value to a local variable
+    // we'll be using view keyword since we won't be making changes to the state variabble and we are only declaring a local variable and setting its value to a local variable
     function newFunction() public view returns (address) { 
         address myAddress = msg.sender; // any person or any externally owned account calling this function will have his or her address in this global variable
         return myAddress;

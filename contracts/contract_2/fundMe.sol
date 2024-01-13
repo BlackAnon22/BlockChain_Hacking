@@ -1,6 +1,6 @@
 // This is a contract that get funds from users, set a minimum funding value in usd and then withdraw the funds
 
-//SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 

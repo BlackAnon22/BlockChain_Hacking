@@ -5,19 +5,19 @@ pragma solidity 0.8.19; //solidity version
 
 contract SimpleStorage{
 
-    //this defaults to 0
+    // this defaults to 0
     uint256 MyFavoriteNumber;
 
-    //creating a new type "Person"
+    // creating a new type "Person"
     struct Person{
         uint256 favoriteNumber;
         string name;
     }
 
-    //creating a dynamic array
+    // creating a dynamic array
     Person[] public listOfPeople;
 
-    //creating a dictionary
+    // creating a dictionary
     mapping(string => uint256) public nameOfFavoriteNumber;
 
     //declaring a function store
@@ -25,7 +25,7 @@ contract SimpleStorage{
         MyFavoriteNumber = _favoriteNumber;
     }
 
-    //accessing the state variable
+    // accessing the state variable
     function retrieve() public view returns(uint256){
         return MyFavoriteNumber; 
     }

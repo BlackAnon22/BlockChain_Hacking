@@ -1,4 +1,4 @@
-// This is a contract that get funds from users, set a minimum funding value in usd and then withdraw the funds
+// This is a contract that get funds from users, set a minimum funding value in usd and then the owner of the contract can withdraw the funds
 
 // SPDX-License-Identifier: MIT
 

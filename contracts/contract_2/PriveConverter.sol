@@ -1,4 +1,4 @@
-// This is going to be a library, a price converter library
+// This is a price converter library
 
 // SPDX-License-Identifier: MIT
 

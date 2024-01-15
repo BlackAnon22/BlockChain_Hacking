@@ -20,7 +20,7 @@ contract SimpleStorage{
     // creating a dictionary
     mapping(string => uint256) public nameOfFavoriteNumber;
 
-    //declaring a function store
+    // declaring a function store
     function store(uint256 _favoriteNumber) public{
         MyFavoriteNumber = _favoriteNumber;
     }

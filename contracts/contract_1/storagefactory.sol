@@ -20,7 +20,7 @@ contract StorageFactory{
 
      // retrieves a number from a specific SimpleStorage contract identified by its index in the array.
     function sfGet(uint256 _simpleStorageIndex) public view returns (uint256) {
-        // SimpleStorage mySimpleStorage = listofsimpleStorageContracts[_simpleStorageIndex];
+        //SimpleStorage mySimpleStorage = listofsimpleStorageContracts[_simpleStorageIndex];
         //return mySimpleStorage.retrieve();
         return listofsimpleStorageContracts[_simpleStorageIndex].retrieve(); //this is more condensed
     }

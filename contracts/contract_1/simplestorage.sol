@@ -30,7 +30,7 @@ contract SimpleStorage{
         return MyFavoriteNumber; 
     }
 
-    //creating a function that pushes new people into the array and dictionary
+    // creating a function that pushes new people into the array and dictionary
     function addPerson(string memory _name, uint256 _favoriteNumber) public {
         listOfPeople.push(Person(_favoriteNumber,_name));
         nameOfFavoriteNumber[_name] = _favoriteNumber;

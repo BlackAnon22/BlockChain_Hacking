@@ -18,7 +18,7 @@ contract StorageFactory{
         listofsimpleStorageContracts[_simpleStorageIndex].store(_newSimpleStorageNumber); //this is more condensed, commented code also works tho 
     }
 
-     // retrieves a number from a specific SimpleStorage contract identified by its index in the array.
+     // retrieves a number from a specific SimpleStorage contract identified by its index in the array
     function sfGet(uint256 _simpleStorageIndex) public view returns (uint256) {
         //SimpleStorage mySimpleStorage = listofsimpleStorageContracts[_simpleStorageIndex];
         //return mySimpleStorage.retrieve();

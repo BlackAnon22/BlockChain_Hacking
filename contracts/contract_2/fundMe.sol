@@ -76,7 +76,7 @@ contract FundMe {
     //     /   \ 
     //   yes   no
     //  /        \
-    //receive()  fallback()
+    // receive()  fallback()
 
     receive() external payable { 
         fund();

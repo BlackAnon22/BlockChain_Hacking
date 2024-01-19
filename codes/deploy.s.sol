@@ -11,7 +11,8 @@ import {SimpleStorage} from "../src/SimpleStorage.sol";
 
 // inherits from Script
 contract DeploySimpleStorage is Script { 
-    function run() external returns (SimpleStorage) { // returns the contract address
+    // returns the contract address
+    function run() external returns (SimpleStorage) { 
         vm.startBroadcast(); // start broadcasting
         SimpleStorage simpleStorage = new SimpleStorage(); 
         vm.stopBroadcast(); // stop broadcasting

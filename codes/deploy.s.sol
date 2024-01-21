@@ -14,8 +14,7 @@ contract DeploySimpleStorage is Script { // inherits from Script
     
     function run() external returns (SimpleStorage) { // returns the contract address
         vm.startBroadcast(); // start broadcasting
-        // The "new" keyword is used to deploy a different contract
-        SimpleStorage simpleStorage = new SimpleStorage(); 
+        SimpleStorage simpleStorage = new SimpleStorage(); // The "new" keyword is used to deploy a different contract
         // stop broadcasting
         vm.stopBroadcast(); 
         return simpleStorage; 

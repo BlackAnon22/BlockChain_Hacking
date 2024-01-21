@@ -9,8 +9,8 @@ pragma solidity ^0.8.18;
 import {Script} from "forge-std/Script.sol";
 import {SimpleStorage} from "../src/SimpleStorage.sol";
 
-// inherits from Script
-contract DeploySimpleStorage is Script { 
+
+contract DeploySimpleStorage is Script { // inherits from Script
     // returns the contract address
     function run() external returns (SimpleStorage) { 
         // start broadcasting

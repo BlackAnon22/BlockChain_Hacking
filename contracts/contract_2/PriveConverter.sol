@@ -6,7 +6,8 @@ pragma solidity ^0.8.0;
 
 import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 
-library PriceConverter { // library can't have any state variable because all functions has been marked as internal
+// library can't have any state variable because all functions has been marked as internal
+library PriceConverter { 
     function getPrice() internal view returns(uint256){
         // Address 0x694AA1769357215DE4FAC081bf1f309aDC325306
         // ABI

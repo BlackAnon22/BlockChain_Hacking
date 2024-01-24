@@ -36,7 +36,7 @@ contract FundMe {
 
     function withdraw() public onlyOwner { 
         for (uint256 funderIndex = 0; funderIndex < funders.length ; funderIndex++) {
-            // to access the 0th element of the funders array, since it is an array of addresses
+            // To access the 0th element of the funders array, since it is an array of addresses
             address funder = funders[funderIndex];  
             // To reset our mapping addressToAmountFunded
             addressToAmountFunded[funder] = 0;

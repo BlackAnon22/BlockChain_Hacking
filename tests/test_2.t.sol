@@ -1,5 +1,5 @@
-// This is a basic test using console.log
-// Also a basic test to show that the "setUp()" function runs first
+// This is a basic test contract using console.log
+// Also a basic test contract to show that the "setUp()" function runs first
 
 // SPDX-License-Identifier: MIT
 

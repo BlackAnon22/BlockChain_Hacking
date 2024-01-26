@@ -1,4 +1,4 @@
-// This is a basic test to show how the "setUp()" function is executed before any other function
+// This is a basic test contract to show how the "setUp()" function is executed before any other function
 
 // SPDX-License-Identifier: MIT
 

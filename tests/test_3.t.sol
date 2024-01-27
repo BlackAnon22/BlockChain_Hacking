@@ -14,7 +14,7 @@ contract FundMeTest is Test {
 
     // intended to be executed before any test function, here is where we will deploy our contracts
     function setUp() external {
-        // deploys a new instance of the FundMe contract and assigns it to the fundme state variable.
+        // deploys a new instance of the FundMe contract and assigns it to the fundme state variable
         fundme = new FundMe();
     }
 

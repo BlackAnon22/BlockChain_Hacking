@@ -57,7 +57,7 @@ contract FundMe {
 
        // call
        (bool callSuccess, ) = payable(msg.sender).call{value: address(this).balance}("");
-       require(callSuccess, "Call Failed"); // requiring callSuccess is true, other wise prints an error that says "call failed"
+       require(callSuccess, "Call Failed"); // requiring callSuccess is true, other wise prints an error message that says "call failed"
         
     }
 

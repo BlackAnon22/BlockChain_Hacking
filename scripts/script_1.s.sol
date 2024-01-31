@@ -1,6 +1,6 @@
 // Deploying a contract using a script
 
-// PS: This is a script contract to deploy a contract SimpleStorage
+// PS: This is a script contract to deploy a contract "SimpleStorage"
 
 // SPDX-License-Identifier: MIT
 

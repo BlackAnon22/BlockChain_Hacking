@@ -1,6 +1,6 @@
 // 1. Deploy mocks when we are on a local anvil chain
 // 2. Keep track of contract addresses across different chains
-// example, Sepolia ETH/USD has a different address than Rinkeby ETH/USD or Maine ETH/USD
+// Example, Sepolia ETH/USD has a different address than Rinkeby ETH/USD or Maine ETH/USD
 
 // SPDX-License-Identifier: MIT
 

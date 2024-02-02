@@ -35,7 +35,7 @@ contract HelperConfig is Script {
     }
 
     function getAnvilEthConfig() public pure returns (NetworkConfig memory) {
-        // pricefeed address
+        // price feed address
     }
 }
 

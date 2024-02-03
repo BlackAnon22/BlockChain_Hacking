@@ -1,6 +1,6 @@
 // 1. Deploy mocks when we are on a local anvil chain
 // 2. Keep track of contract addresses across different chains
-// Example, Sepolia ETH/USD has a different address than Rinkeby ETH/USD or Maine ETH/USD
+// example, Sepolia ETH/USD has a different address than Rinkeby ETH/USD or Maine ETH/USD
 
 // SPDX-License-Identifier: MIT
 
@@ -21,21 +21,30 @@ contract HelperConfig is Script {
     constructor() {
         if (block.chainid == 11155111) {
             activeNetworkConfig = getSepoliaEthConfig();
+        } else if (block.chainid == 1) {
+            activeNetworkConfig = getMainnetEthConfig();
         } else {
             activeNetworkConfig = getAnvilEthConfig();
         }
     }
 
     function getSepoliaEthConfig() public pure returns (NetworkConfig memory) {
-        // pricefeed address
+        // price feed address
         NetworkConfig memory sepoliaConfig = NetworkConfig({
             priceFeed: 0x694AA1769357215DE4FAC081bf1f309aDC325306
         });
         return sepoliaConfig;
     }
 
+    function getMainnetEthConfig() public pure returns (NetworkConfig memory) {
+        // price feed address
+        NetworkConfig memory ethConfig = NetworkConfig({
+            priceFeed: 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419
+        });
+        return ethConfig;
+    }
+
     function getAnvilEthConfig() public pure returns (NetworkConfig memory) {
         // price feed address
     }
 }
-

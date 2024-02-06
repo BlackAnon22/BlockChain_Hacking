@@ -16,6 +16,6 @@ contract DeploySimpleStorage is Script {
         vm.startBroadcast(); // start broadcasting
         SimpleStorage simpleStorage = new SimpleStorage(); // The "new" keyword is used to deploy a different contract
         vm.stopBroadcast(); // stop broadcasting
-        return simpleStorage; 
+        return simpleStorage;
     }
 }

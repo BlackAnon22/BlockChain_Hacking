@@ -1,3 +1,5 @@
+// This is an updated mock contract I got from the Patrick Collins Course
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 

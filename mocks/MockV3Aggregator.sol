@@ -1,4 +1,5 @@
 // This is an updated mock contract I got from the Patrick Collins Course
+// This has all the code of a price feed
 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;

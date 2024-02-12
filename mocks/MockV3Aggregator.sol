@@ -1,101 +1,73 @@
-// This is an updated mock contract I got from the Patrick Collins Course
-// This has all the code of a price feed
+// 1. Deploy mocks when we are on a local anvil chain
+// 2. Keep track of contract addresses across different chains
+// example, Sepolia ETH/USD has a different address than Rinkeby ETH/USD or Maine ETH/USD
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.19;
 
-/**
- * @title MockV3Aggregator
- * @notice Based on the FluxAggregator contract
- * @notice Use this contract when you need to test
- * other contract's ability to read data from an
- * aggregator contract, but how the aggregator got
- * its answer is unimportant
- */
-contract MockV3Aggregator {
-    uint256 public constant version = 0;
+import {Script} from "forge-std/Script.sol";
+import {MockV3Aggregator} from "../test/mocks/MockV3Aggregator.sol";
 
-    uint8 public decimals;
-    int256 public latestAnswer; 
-    uint256 public latestTimestamp;
-    uint256 public latestRound;
+contract HelperConfig is Script {
+    // If we are on a local anvil chain, deploy mocks
+    // Otherwise, grab the existing address from the live network
 
-    mapping(uint256 => int256) public getAnswer;
-    mapping(uint256 => uint256) public getTimestamp;
-    mapping(uint256 => uint256) private getStartedAt;
+    NetworkConfig public activeNetworkConfig;
 
-    constructor(uint8 _decimals, int256 _initialAnswer) {
-        decimals = _decimals;
-        updateAnswer(_initialAnswer);
+    uint8 public constant DECIMALS = 8;
+    int256 public constant INITIAL_PRICE = 2000e8;
+
+    struct NetworkConfig {
+        address priceFeed; // ETH/USD price feed address
     }
 
-    function updateAnswer(int256 _answer) public {
-        latestAnswer = _answer;
-        latestTimestamp = block.timestamp;
-        latestRound++;
-        getAnswer[latestRound] = _answer;
-        getTimestamp[latestRound] = block.timestamp;
-        getStartedAt[latestRound] = block.timestamp;
+    constructor() {
+        if (block.chainid == 11155111) {
+            activeNetworkConfig = getSepoliaEthConfig();
+        } else if (block.chainid == 1) {
+            activeNetworkConfig = getMainnetEthConfig();
+        } else {
+            activeNetworkConfig = getOrCreateAnvilEthConfig();
+        }
     }
 
-    function updateRoundData(
-        uint80 _roundId,
-        int256 _answer,
-        uint256 _timestamp,
-        uint256 _startedAt
-    ) public {
-        latestRound = _roundId;
-        latestAnswer = _answer;
-        latestTimestamp = _timestamp;
-        getAnswer[latestRound] = _answer;
-        getTimestamp[latestRound] = _timestamp;
-        getStartedAt[latestRound] = _startedAt;
+    function getSepoliaEthConfig() public pure returns (NetworkConfig memory) {
+        // price feed address
+        NetworkConfig memory sepoliaConfig = NetworkConfig({
+            priceFeed: 0x694AA1769357215DE4FAC081bf1f309aDC325306
+        });
+        return sepoliaConfig;
     }
 
-    function getRoundData(
-        uint80 _roundId
-    )
-        external
-        view
-        returns (
-            uint80 roundId,
-            int256 answer,
-            uint256 startedAt,
-            uint256 updatedAt,
-            uint80 answeredInRound
-        )
-    {
-        return (
-            _roundId,
-            getAnswer[_roundId],
-            getStartedAt[_roundId],
-            getTimestamp[_roundId],
-            _roundId
+    function getMainnetEthConfig() public pure returns (NetworkConfig memory) {
+        // price feed address
+        NetworkConfig memory ethConfig = NetworkConfig({
+            priceFeed: 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419
+        });
+        return ethConfig;
+    }
+
+    function getOrCreateAnvilEthConfig() public returns (NetworkConfig memory) {
+        if (activeNetworkConfig.priceFeed != address(0)) {
+            return activeNetworkConfig;
+        }
+        // price feed address
+
+        // 1. Deploy Mocks
+        // 2. Return the mock address
+
+        vm.startBroadcast();
+        MockV3Aggregator mockPriceFeed = new MockV3Aggregator(
+            DECIMALS,
+            INITIAL_PRICE
         );
-    }
+        vm.stopBroadcast();
 
-    function latestRoundData()
-        external
-        view
-        returns (
-            uint80 roundId,
-            int256 answer,
-            uint256 startedAt,
-            uint256 updatedAt,
-            uint80 answeredInRound
-        )
-    {
-        return (
-            uint80(latestRound),
-            getAnswer[latestRound],
-            getStartedAt[latestRound],
-            getTimestamp[latestRound],
-            uint80(latestRound)
-        );
-    }
+        NetworkConfig memory anvilConfig = NetworkConfig({
+            priceFeed: address(mockPriceFeed)
+        });
 
-    function description() external pure returns (string memory) {
-        return "v0.8/tests/MockV3Aggregator.sol";
+        return anvilConfig;
     }
 }

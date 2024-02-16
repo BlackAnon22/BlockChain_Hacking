@@ -16,7 +16,7 @@ contract MyContract{ // The first line is declaring a state variable
         return myAddress;
 
 
-    } 
+    }
 
 
 }

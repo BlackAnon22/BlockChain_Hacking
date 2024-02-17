@@ -2,7 +2,7 @@
 
 pragma solidity ^0.6.0;
 
-contract MyContract{ // The first line is declaring a state variable
+contract myContract{ // The first line is declaring a state variable
     uint public number1; // So the value number1 will be stored on the blockchain
 
     function myFunction() public { // This is a local variable

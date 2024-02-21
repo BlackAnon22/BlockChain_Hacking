@@ -15,7 +15,7 @@ contract FundMe {
 
     address public owner;
 
-    constructor() {
+    constructor() { 
         // The owner is set to the address that deploys the contract
         owner = msg.sender;
     }

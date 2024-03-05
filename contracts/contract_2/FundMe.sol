@@ -11,7 +11,7 @@ error NotOwner();
 
 contract FundMe {
 
-    using PriceConverter for uint256; // To attach the functions in our PriceConversion.sol file
+    using PriceConverter for uint256; // To attach the functions in our PriceConversion.sol file 
 
     uint256 public constant MINIMUM_USD = 5e18;
 

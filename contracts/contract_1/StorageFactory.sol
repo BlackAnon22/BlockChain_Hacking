@@ -5,7 +5,7 @@ import{SimpleStorage} from "./SimpleStorage.sol";
 
 contract StorageFactory{
     SimpleStorage[] public listofsimpleStorageContracts; // a dynamic array is created to take note of the several address the contract is being deployed to
-
+ 
     function createSimpleStorageContract() public {
         SimpleStorage newSimpleStorageContract = new SimpleStorage();
         listofsimpleStorageContracts.push(newSimpleStorageContract); //our array is being updated

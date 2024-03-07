@@ -1,3 +1,5 @@
+// A contract that gets the name of people alongside their favorite anime characters
+
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;

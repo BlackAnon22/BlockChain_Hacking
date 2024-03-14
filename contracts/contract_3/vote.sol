@@ -11,7 +11,7 @@ contract voteCharacters {
         string favoriteAnimeCharacter; 
         string name;
     }
-
+ 
     // dynamic array of Person
     Person[] public listOfPeople;
 

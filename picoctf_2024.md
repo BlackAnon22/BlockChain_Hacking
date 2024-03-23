@@ -48,3 +48,56 @@ This is a writeup of the challenges I solved during the event
 
 ## Reverse Engineering
 -      packer (100 points)
+
+
+
+
+
+# General Skills
+
+##  Super SSH (25 points)
+<hr>
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/6fb1149c-36bd-48de-aa48-59608593e232)
+
+For this task they provided us with the username, the port the ssh service is running on, the domain to connect to and then the password. So, we can use all this to connect to the remote instance via ssh
+
+command:```ssh ctf-player@titan.picoctf.net -p 49566```
+
+```
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/Downloads/CTF/picoCTF_2024]
+└─$ ssh ctf-player@titan.picoctf.net -p 49566
+ctf-player@titan.picoctf.net's password: 
+Welcome ctf-player, here's your flag: picoCTF{s3cur3_c0nn3ct10n_45a48857}
+Connection to titan.picoctf.net closed.
+```
+Well, connecting to the ssh instance gave us the flag
+
+FLAG:- ```picoCTF{s3cur3_c0nn3ct10n_45a48857}```
+
+------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

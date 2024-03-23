@@ -445,9 +445,9 @@ flag{y0u_c4n't_catch_m3}
 ```
 Now, lets confirm if we can use these binaries to read the ```flag.txt``` files on the challenge instance
 
-So to read with strings we can try something like this ```/usr/bin/strings ~/blargh/flag.txt```, using wildcards we have this ```/???/???/????? ~/??????/????????```
+So to read with strings we can try something like this ```/usr/bin/strings ~/blargh/flag.txt```, using wildcards we have this ```/???/???/??????? ~/??????/????????```
 
-![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/cf39c08c-4e0c-428e-8304-57fc948fd8fc)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/764f0d4a-b49c-4f9a-99c2-749c0cadbf3d)
 
 So we don't have ```strings``` available.
 

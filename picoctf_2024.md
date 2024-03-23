@@ -22,11 +22,13 @@ This is a writeup of the challenges I solved during the event
 
 
 ## Web Exploitation
--     findme (100 points)
--     MatchTheRegex (100 points)
--     SOAP (100 points)
--     More SQLi (200 points)
--     Java Code Analysis!?! (300 points)
+-     Bookmarklet (100 points)
+-     WebDecode (100 points)
+-     IntroToBurp (100 points)
+-     Unminify (200 points)
+-     No Sql Injection (300 points)
+-     Trickster (300 points)
+-     Elements (500 points)
 
 
 ## Forensics

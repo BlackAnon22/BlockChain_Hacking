@@ -22,11 +22,11 @@ This is a writeup of the challenges I solved during the event
 
 
 ## Web Exploitation
--     Bookmarklet (100 points)
--     WebDecode (100 points)
+-     Bookmarklet (50 points)
+-     WebDecode (50 points)
 -     IntroToBurp (100 points)
--     Unminify (200 points)
--     No Sql Injection (300 points)
+-     Unminify (100 points)
+-     No Sql Injection (200 points)
 -     Trickster (300 points)
 -     Elements (500 points)
 
@@ -472,7 +472,96 @@ We got our flag😎
 
 FLAG:- ```picoCTF{7h15_mu171v3r53_15_m4dn355_4945630a}```
 
-------------------------------------------------------
+
+
+# Web Exploitation
+
+## Bookmarklet (100 points)
+<hr>
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/fbb68337-39a7-4c5b-aab9-6fcf8d81886a)
+
+Navigate to the webpage
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/4410eb8b-d0f5-4d9b-bff9-ed0f4bac334d)
+
+We get this javascript code
+
+```js
+        javascript:(function() {
+            var encryptedFlag = "àÒÆÞ¦È¬ëÙ£ÖÓÚåÛÑ¢ÕÓÔÅÐÙí";
+            var key = "picoctf";
+            var decryptedFlag = "";
+            for (var i = 0; i < encryptedFlag.length; i++) {
+                decryptedFlag += String.fromCharCode((encryptedFlag.charCodeAt(i) - key.charCodeAt(i % key.length) + 256) % 256);
+            }
+            alert(decryptedFlag);
+        })();
+ ```
+This javascript code is more like a simple encryption routine using a basic form of symmetric encryption. It takes an encrypted flag, a key and then decrypts the flag using the key
+
+We'll run this code using one of the developer tools which is the "console"
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/2736d1be-2306-47f7-a31d-076d03a05eba)
+
+Soft, we got our flag
+
+FLAG:- ```picoCTF{p@g3_turn3r_1d1ba7e0}```
+
+---------------------------------------
+
+## WebDecode (50 points)
+<hr>
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/23c27c30-b2ba-4b87-8b6a-73f020d93f4f)
+
+A question was aksed, Do you know how to use the web inspector??? Well, lets see
+
+Navigate to the webpage
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/d60f4871-5de9-40d9-9fff-898f5d56f8ba)
+
+We have 3 pages here, the "home page", the "about page" and the "contact page"
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/bccbc69d-2fab-4138-b4f4-deed63fb218b)
+
+This is what you get when you click on the "home page"
+
+Clicking on the "about page" you get this
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/c310eca9-9f84-42cc-9ed5-21868385367d)
+
+Now, lets inspect this page
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/b03637fb-9e3c-47f7-bbff-b56405691928)
+
+We can see the base64 encoded text, well lets decode this
+
+command:```echo "cGljb0NURnt3ZWJfc3VjYzNzc2Z1bGx5X2QzYzBkZWRfZGYwZGE3Mjd9" | base64 -d```
+
+```
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/Downloads/CTF/picoCTF_2024/web]
+└─$ echo "cGljb0NURnt3ZWJfc3VjYzNzc2Z1bGx5X2QzYzBkZWRfZGYwZGE3Mjd9" | base64 -d
+picoCTF{web_succ3ssfully_d3c0ded_df0da727}
+```
+We got our flag😎
+
+FLAG:- ```picoCTF{web_succ3ssfully_d3c0ded_df0da727}```
+
+------------------------------------------------
+
+## IntroToBurp (100 points)
+<hr>
+
+
+
+
+
+
+
+
+
+
 
 
 

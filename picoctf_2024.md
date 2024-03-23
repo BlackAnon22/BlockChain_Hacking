@@ -407,7 +407,7 @@ Good, now lets test this on the challenge instance, lets see if it'll help us wi
 
 So there's a directory ```/home/ctf-player/blargh```
 
-Lets keep digging, lets check for sub-directories this time
+Lets keep digging, lets check for sub-directories/files this time
 
 ![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/1ec7c857-a3cc-4f06-a748-83fd2707aefc)
 

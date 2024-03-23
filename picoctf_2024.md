@@ -32,30 +32,19 @@ This is a writeup of the challenges I solved during the event
 
 
 ## Forensics
--     hideme (100 points)
--     PcapPoisoning (100 points)
--     who is it (100 points)
--     FindAndOpen (200 points)
--     MSB (200 points)
--     Invinsible WORDs (300 points)
--     UnforgottenBits (500 points)
+-     Scan Surprise (50 points)
+-     Verify (50 points)
+-     CanYouSee (100 points)
+-     Secret of the Polygot (100 points)
+-     Mob Psycho (200 points)
+-     endianness-v2 (300 points)
+-     Blast from the Past (300 points)
+-     Dear Diary (400 points)
 
 
 ## Cryptography
--     HideToSee (100 points)
--     ReadMyCert (100 points)
--     rotation (100 points)
-
-
-## Binary Exploitation
--      two-sum (100 points)
--      hijacking (200 points)
--      tic-tac (200 points)
--      VNE (200 points)
-
+-     interencdec (50 points)
+-     rsa_oracle (300 points)
 
 ## Reverse Engineering
--      Reverse (100 points)
--      Safe Opener 2 (100 points)
--      Virtual Machine 0 (100 points)
--      Ready Gladiator 2 (400 points)
+-      packer (100 points)

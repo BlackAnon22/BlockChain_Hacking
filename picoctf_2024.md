@@ -1,4 +1,4 @@
-My teammates(LocalMen) and I participated in the picoCTF_2024 organized by Carnegie Mellon University, which took place between March 12, 2024 to March 26, 2024. It was a great learning experience and I really learnt a lot.
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/9bb44624-2b60-439b-a423-bf5a0d0cc242)My teammates(LocalMen) and I participated in the picoCTF_2024 organized by Carnegie Mellon University, which took place between March 12, 2024 to March 26, 2024. It was a great learning experience and I really learnt a lot.
 
 ![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/fd900f40-a20f-4ef3-9793-118345219d87)
 ![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/7ea096f1-898f-482f-ada4-e27c10639cbe)
@@ -844,6 +844,128 @@ FLAG:- ```picoCTF{ME74D47A_HIDD3N_6a9f5ac4}```
 
 ## Secret of the Polygot (100 points)
 <hr>
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/8a8180c1-2800-4d2f-b929-fdd619d40218)
+
+Download the challenge file
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/69d8cb34-bde8-4c7f-9261-46988219b81d)
+
+We've got a pdf file, lets view the content of this pdf file using a pdf viewer
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/d1e21b27-1c5c-46fb-a41c-2e826fd0ce77)
+
+oops. we've only got half of the flag. Should we form the other half ourselves??😂
+
+Well, we don't need to do that. Try using the ```file``` command to check the kind of file that file is
+
+```
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/CTF/picoCTF_2024/forensics/secret_of_the_polygot]
+└─$ file flag2of2-final.pdf 
+flag2of2-final.pdf: PNG image data, 50 x 50, 8-bit/color RGBA, non-interlaced
+```
+As you can see it is a png image not even a pdf file. What we can do is change the file extension from ```.pdf``` to ```.png```
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/4db0204c-2c28-4957-99bf-fe5b0b98f3af)
+
+Yup that's the other half of the flag😎
+
+FLAG:- ```picoCTF{f1u3n7_1n_pn9_&_pdf_1f991f77}```
+
+---------------------------------
+
+## Mob Psycho (200 points)
+<hr>
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/99d589d4-8858-4167-814d-82cfd38130c4)
+
+Download the APK file
+
+```
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/CTF/picoCTF_2024/forensics/mob_psycho]
+└─$ ls -la
+total 4048
+drwxr-xr-x 2 bl4ck4non bl4ck4non    4096 Mar 24 15:09 .
+drwxr-xr-x 7 bl4ck4non bl4ck4non    4096 Mar 24 15:08 ..
+-rw-r--r-- 1 bl4ck4non bl4ck4non 4136368 Mar 24 15:09 mobpsycho.apk
+```
+We could have extracted this using ```apktool``` but then it won't give us the flag, so lets just unzip
+
+command:```unzip mobpsycho.apk```
+
+```
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/CTF/picoCTF_2024/forensics/mob_psycho]
+└─$ ls -la
+total 14148
+drwxr-xr-x  4 bl4ck4non bl4ck4non    4096 Mar 24 15:18 .
+drwxr-xr-x  7 bl4ck4non bl4ck4non    4096 Mar 24 15:08 ..
+-rw-r--r--  1 bl4ck4non bl4ck4non    4056 Jan  1  1981 AndroidManifest.xml
+drwxr-xr-x  4 bl4ck4non bl4ck4non    4096 Mar 12 01:06 META-INF
+-rw-r--r--  1 bl4ck4non bl4ck4non 9028868 Jan  1  1981 classes.dex
+-rw-r--r--  1 bl4ck4non bl4ck4non  463856 Jan  1  1981 classes2.dex
+-rw-r--r--  1 bl4ck4non bl4ck4non    3700 Jan  1  1981 classes3.dex
+-rw-r--r--  1 bl4ck4non bl4ck4non 4136368 Mar 24 15:09 mobpsycho.apk
+drwxr-xr-x 41 bl4ck4non bl4ck4non    4096 Mar 12 01:06 res
+-rw-r--r--  1 bl4ck4non bl4ck4non  824736 Jan  1  1981 resources.arsc
+```
+Well, at this point I started asking myself why the challenge creator gave it the name "Mob Psycho" because it is so unrelated.
+
+To get the flag, try searching for files with the ```.txt``` extensions
+
+command:```find . -type f -name "*.txt"```
+
+```
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/CTF/picoCTF_2024/forensics/mob_psycho]
+└─$ find . -type f -name "*.txt"
+./res/color/flag.txt
+                                                                                                                                                                                                                                             
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/CTF/picoCTF_2024/forensics/mob_psycho]
+└─$ cat res/color/flag.txt 
+7069636f4354467b6178386d433052553676655f4e5838356c346178386d436c5f37343664666133397d
+```
+We get that ciper, using [dcode.fr](https://www.dcode.fr/cipher-identifier) we can determine the kind of cipher this is
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/e8b7078c-4772-49a6-b73e-e56d63808dc0)
+
+Ascii code, nice. Lets decode
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/b07e8bf6-75de-40e2-b82e-dd9f707ff33c)
+
+Successfully gotten the flag
+
+FLAG:- ```picoCTF{ax8mC0RU6ve_NX85l4ax8mCl_746dfa39}```
+
+---------------------------- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

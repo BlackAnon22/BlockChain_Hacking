@@ -750,6 +750,105 @@ FLAG:- ```picoCTF{c3rt!fi3d_Xp3rt_tr1ckst3r_48785c0e}```
 
 
 
+# Forensics
+
+## Scan Surprise (50 points)
+<hr>
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/02e8b578-e29f-42da-b072-d81117c93104)
+
+We actually don't need the challenge instance, just download the challenge file and unzip
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/87b27ff4-5079-46c9-b535-f3b86cedf844)
+
+We have a png image, lets check the content of this image
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/65a22f99-c35a-4fc2-8c1e-f9421148e91c)
+
+We have this qr code, we can scan this using this [website](https://scanqr.org/)
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/c26768eb-13da-463b-9b63-84772daaac98)
+
+We got our flag
+
+FLAG:- ```picoCTF{p33k_@_b00_19eccd10}```
+
+---------------------------------------------
+
+## Verify (50 points)
+<hr>
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/675317f3-d328-4807-970d-c77c14c7e93b)
+
+Download the challenge file and unzip
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/d5ac4b25-1bc4-4071-abf5-d59b667459a9)
+
+We have a ```checksum.txt``` file and also a ```decrypt.sh``` file. The ```files``` directory contains 100+ files, in these files we have different checksums
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/468997e2-6dbc-4205-ab3f-5cbe8b4a0133)
+
+So we have that particular sha-256 hash, and then we have the openssl command in the "decrypt.sh" file.
+
+First, lets look for the file that has this sha-256 hash ```55b983afdd9d10718f1db3983459efc5cc3f5a66841e2651041e25dec3efd46a```. We can use the grep command for this
+
+```
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/verify/home/ctf-player/drop-in]
+└─$ cd files                                                                             
+                                                                                                                                                                                                                                             
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/home/ctf-player/drop-in/files]
+└─$ sha256sum * | grep "55b983afdd9d10718f1db3983459efc5cc3f5a66841e2651041e25dec3efd46a"
+55b983afdd9d10718f1db3983459efc5cc3f5a66841e2651041e25dec3efd46a  2cdcb2de
+```
+The file ```2cdcb2de``` contains our sha-256 hash. Now, lets use openssl to decrypt this
+
+command:```openssl enc -d -aes-256-cbc -pbkdf2 -iter 100000 -salt -in files/2cdcb2de -k picoCTF -out encrypted.data```
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/f964f0e9-eee4-4192-949d-4ed947d8bd20)
+
+Yup, that's our flag
+
+FLAG:- ```picoCTF{trust_but_verify_2cdcb2de}```
+
+-------------------------------------------
+
+## CanYouSee (100 points)
+<hr>
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/b78943e4-2731-413b-b157-b48e69f4e49e)
+
+Download the challenge file and unzip
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/9e752d62-81fa-4f3d-928d-cb88e5a7eefa)
+
+We've got a jpg image, lets run exiftool on this image
+
+command:```exiftool ukn_reality.jpg```
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/528f8a0f-329f-48ab-bd0f-d2e13f2e8876)
+
+That's a base64 encoded text, lets decode hehe
+
+command:```echo "cGljb0NURntNRTc0RDQ3QV9ISUREM05fNmE5ZjVhYzR9Cg==" | base64 -d```
+
+```
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/CTF/picoCTF_2024/forensics/canyousee]
+└─$ echo "cGljb0NURntNRTc0RDQ3QV9ISUREM05fNmE5ZjVhYzR9Cg==" | base64 -d                                    
+picoCTF{ME74D47A_HIDD3N_6a9f5ac4}
+```
+Nice Nice, we got our flag
+
+FLAG:- ```picoCTF{ME74D47A_HIDD3N_6a9f5ac4}```
+
+---------------------------------------------------------------
+
+## Secret of the Polygot (100 points)
+<hr>
+
+
+
+
+
 
 
 

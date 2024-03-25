@@ -1072,6 +1072,29 @@ That's the time and date we have on the samsung timestamp, so we have to edit th
 
 Lets do that
 
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/c54f1ad1-c121-488f-9adc-f6f7e9f31887)
+
+You can see that the unix timestamp for this date is ```0```, since well'll be using ```GMT+1``` (GMT+1 refers to Greenwich Mean Time plus one hour), we can say our unix timestamp for that given date is ```01``` which in hex is represented as ```30 31```.
+
+Now, this means we'll edit from this
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/49dda1d5-d7f9-415b-9ea2-8305c99b9d0d)
+
+To this
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/9713130a-e0c7-4f0e-8f17-cf6988ee79bf)
+
+Now lets submit this modified image and check it
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/f472155f-eeb6-44cb-b6b4-a5a0e6957a11)
+
+We got our flag hehe😎
+
+FLAG:- ```picoCTF{71m3_7r4v311ng_p1c7ur3_ed953b57}```
+
+----------------------------------
+
+##  
 
 
 

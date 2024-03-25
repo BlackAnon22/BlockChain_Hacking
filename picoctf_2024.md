@@ -1094,7 +1094,21 @@ FLAG:- ```picoCTF{71m3_7r4v311ng_p1c7ur3_ed953b57}```
 
 ----------------------------------
 
-##  
+## Dear Diary (400 points)
+<hr>
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/3d1fb30e-09df-452e-b443-cd668f530f5e)
+
+Pico has a culture of releasing disk images challs as as part of their forensics chall every year, well this was easier compared to last year's own. Took me less than 30 mins to figure out hehe😎
+
+Lets jump right into it
+
+Dowload the challenge file and extract the disk image
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/0200d324-4181-4ae1-8db5-30b5be7906d8)
+
+We'll mount this disk image using autopsy. Autopsy is a tool that comes preinstalled on kali
+
 
 
 

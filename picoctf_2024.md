@@ -1,4 +1,4 @@
-![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/9bb44624-2b60-439b-a423-bf5a0d0cc242)My teammates(LocalMen) and I participated in the picoCTF_2024 organized by Carnegie Mellon University, which took place between March 12, 2024 to March 26, 2024. It was a great learning experience and I really learnt a lot.
+My teammates(LocalMen) and I participated in the picoCTF_2024 organized by Carnegie Mellon University, which took place between March 12, 2024 to March 26, 2024. It was a great learning experience and I really learnt a lot.
 
 ![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/fd900f40-a20f-4ef3-9793-118345219d87)
 ![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/7ea096f1-898f-482f-ada4-e27c10639cbe)
@@ -937,6 +937,140 @@ FLAG:- ```picoCTF{ax8mC0RU6ve_NX85l4ax8mCl_746dfa39}```
 
 ---------------------------- 
 
+## endianness-v2 (300 points)
+<hr>
+
+
+------------------------------
+
+## Blast from the Past (300 points)
+<hr>
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/5fc1f823-004f-48bf-87cb-e4c64d5aea61)
+
+The task here is to set the timestamps on this jpeg to ```1970:01:01 00:00:00.001+00:00```
+
+Lets download the file
+
+```
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/CTF/picoCTF_2024/forensics/blast_from_the_past]
+└─$ ls -la
+total 2796
+drwxr-xr-x 2 bl4ck4non bl4ck4non    4096 Mar 25 05:49 .
+drwxr-xr-x 8 bl4ck4non bl4ck4non    4096 Mar 25 05:46 ..
+-rw-r--r-- 1 bl4ck4non bl4ck4non 2851929 Mar 25 05:46 original.jpg
+```
+When you run ```exiftool``` on the image, you'll get this
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/2a2970a2-1c8d-4b44-8d2f-5f03f288379a)
+
+To know the timestamps to specifically edit, lets try to submit the original jpg file. We have 2 instances, one is for submitting the modified jpeg, while the other instance is used for checking the modified jpeg.
+
+Lets try to submit this original jpeg so we know what to edit
+
+command
+```
+nc -w 2 mimas.picoctf.net 58576 < original.jpg (to submit)
+nc mimas.picoctf.net 54978 (to check) (notice how I didn't include the "-d", well it is not needed)
+```
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/a9580e96-f2eb-4423-b97b-02e0d262bfd5)
+
+Lets edit the ```ModifyDate```
+
+command:```exiftool -ModifyDate="1970:01:01 00:00:00" original.jpg```
+
+```
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/CTF/picoCTF_2024/forensics/blast_from_the_past]
+└─$ exiftool -ModifyDate="1970:01:01 00:00:00" original.jpg
+    1 image files updated
+```
+Good, now lets submit and check the modified jpg file
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/4dd4b3b9-d843-4a07-aac4-681da6c0b2db)
+
+Good, we've completed the first tag, the second tag requires us to modify ```DateTimeOriginal```
+
+Chotto matte, what if instead of editing the timestamps one by one we just edit all at once??
+
+Lets try it
+
+command:```exiftool -AllDates="1970:01:01 00:00:00" original.jpg```
+
+```
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/CTF/picoCTF_2024/forensics/blast_from_the_past]
+└─$ exiftool -AllDates="1970:01:01 00:00:00" original.jpg  
+    1 image files updated
+```
+Lets submit and check again
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/a63a4852-90ea-4470-a701-70bda8416b5c)
+
+Good, we jumped right to the 4th tag, to edit the composite ```SubSecCreateDate```
+
+command:```exiftool -SubSecCreateDate="1970:01:01 00:00:00.001" original.jpg```
+
+```
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/CTF/picoCTF_2024/forensics/blast_from_the_past]
+└─$ exiftool -SubSecCreateDate="1970:01:01 00:00:00.001" original.jpg
+    1 image files updated
+```
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/c5103756-d18c-482d-89f1-2073ee3bcf46)
+
+Good, for the 5th tag we have to edit the composite ```SubSecDateTimeOriginal```
+
+command:```exiftool -SubSecDateTimeOriginal="1970:01:01 00:00:00.001" original.jpg```
+
+```
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/CTF/picoCTF_2024/forensics/blast_from_the_past]
+└─$ exiftool -SubSecDateTimeOriginal="1970:01:01 00:00:00.001" original.jpg
+    1 image files updated
+```
+Lets submit and check the next timestamp to edit
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/5c3f594b-273b-4122-bb3b-a15bd2058bb2)
+
+For the 6th tag we have to edit the composite ```SubSecModifyDate```
+
+command:```exiftool -SubSecModifyDate="1970:01:01 00:00:00.001" original.jpg```
+
+```
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/CTF/picoCTF_2024/forensics/blast_from_the_past]
+└─$ exiftool -SubSecModifyDate="1970:01:01 00:00:00.001" original.jpg      
+    1 image files updated
+```
+Lets submit and view
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/0d1ce5cb-5258-4695-95a7-59d3711b6660)
+
+Good, we are now on the 7th tag, well for this 7th tag exiftool didn't really help me out. So I uded a hexeditor "imex". To install you can just run ```sudo apt install imhex```. You actually can use any hexeditor of your choice
+
+We'll edit the jpg file using this, you'll know why soon
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/0415342c-b781-4909-b91a-75499136936b)
+
+Now, scroll down to the bottom, you'll find something interesting hehe
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/aec7fd65-96df-4a0f-8a59-93e31ff70426)
+
+From the above screenshot you can see something like this ```Image_UTC_Data1700513181420``` and we know that the 7th tag which is the last one has to do with modifying the samsung timestamp.
+
+Well, the question should be, how does samsung store their timestamp
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/2327c2e2-ab95-4345-8719-bd1e1effa5b9)
+
+As we can see samsung stores their timestamp more like in unix timestamps, lets try to convert the unix timestamp we found in the jpeg hex.
+
+unix timestamp:```1700513181420```
+
+We can [website](https://www.unixtimestamp.com/) to convert this to a proper date and time
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/c34509b5-eab6-413a-88e8-ba590f40b71a)
+
+That's the time and date we have on the samsung timestamp, so we have to edit this. Since we know the date we want to edit to which is ```1970:01:01 00:00:00.001+00:00``` we'll just convert this to unix timestamp
+
+Lets do that
 
 
 

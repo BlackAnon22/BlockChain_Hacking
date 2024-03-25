@@ -1,4 +1,4 @@
-My teammates(LocalMen) and I participated in the picoCTF_2024 organized by Carnegie Mellon University, which took place between March 12, 2024 to March 26, 2024. It was a great learning experience and I really learnt a lot.
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/161c2a5a-9df6-4f8b-993f-3b76b24a52a1)My teammates(LocalMen) and I participated in the picoCTF_2024 organized by Carnegie Mellon University, which took place between March 12, 2024 to March 26, 2024. It was a great learning experience and I really learnt a lot.
 
 ![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/fd900f40-a20f-4ef3-9793-118345219d87)
 ![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/7ea096f1-898f-482f-ada4-e27c10639cbe)
@@ -1107,17 +1107,108 @@ Dowload the challenge file and extract the disk image
 
 ![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/0200d324-4181-4ae1-8db5-30b5be7906d8)
 
-We'll mount this disk image using autopsy. Autopsy is a tool that comes preinstalled on kali
+From the hint provided
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/23b817ef-795e-433f-9f5c-cf29235d1158)
+
+It's so obvious we can't mount the disk image using our terminal, so we'll mount this disk image using autopsy. Autopsy is a tool that comes preinstalled on kali
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/53d336e8-7b0d-46ec-96eb-3d5943b37a58)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/178c4aa4-4f97-4e20-80fa-31d60844ec95)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/2dc5d912-787b-4edf-aabc-9abd46d3953d)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/203fdaca-537f-42ce-a5d8-5edf3f85948f)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/06b2ecdc-02f2-4f26-a9e8-89a154c9e437)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/addf45a6-3428-4c4f-8b58-10050b9e3345)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/bd99bc7c-d694-4821-b9b4-510aff3bd1eb)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/4b91aa66-6b14-4ddf-91b4-60af7f936d14)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/de0ce342-aa2c-4025-9601-3d34ce5ae0bb)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/de5c8b19-af2e-4943-9a8d-0fe98ce9e286)
+
+We have 2 extended file system, trust me there isn't anything in the first partition, just junks hehe. Lets analyze the 3rd partition
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/cc973af7-88ca-42d4-a827-414abed13667)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/687cfdd9-aaea-4ec9-bd7d-081fec15ae1d)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/101cbcf1-39ca-4881-aeeb-22b7d5b7c379)
+
+In the ```root/``` directory you'll find a ```.ash_history``` file and a ```secret-secrets/``` directory, in the ```secret-secrets/``` directory you'll see 2 empty files and then a bash script ```force-wait.sh```
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/b91503c3-7cfb-4861-81fe-196874e26cbc)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/9320a82d-ad8a-4440-b998-a64e05b9f337)
+
+We don't need the bash script, we are only interested in those 2 files ```innocuous-file.txt``` and ```its-all-in-the-name```, these files are empty actually or so you thought hehe.
+
+Look at the name of the second file ```its-all-in-the-name```, this means it's making reference to the first file ```innocuous-file.txt```, so instead of searching for ```flag.txt``` or ```picoCTF{```😂, I searched for ```innocuous``` instead
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/434c0fc3-2bb5-4088-a744-c6af6d7de52b)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/d6562b35-5c9d-4479-95aa-e65125eafc3a)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/28039c3b-3b8d-4fd7-ab71-fd829446a63f)
+
+We got 14 hits hehe, check the 4th, 5th and 6th fragment, you'll see something interesting
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/d2780b8d-668f-4ffd-aa0e-fc102cb765bc)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/6b19b690-a8a2-4a1c-8c20-c752fc120362)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/b6a39af5-046e-41d7-b8f6-c051235380c4)
+
+Putting together what we got from the 3 fragments, you should have something like this ```picoCTF{1```, this means the flag was distributed amongst the fragments.
+
+Checking the other fragments should get you the remaining parts of the flag. Easy right??😎
+
+FLAG:- ```picoCTF{1_533_n4m35_80d24b30}```
 
 
+# Cryptography
 
+## interencdec (50 points)
+<hr>
 
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/6aaf4d3c-38a6-4944-bffb-c20d4bd5436c)
 
+This was actually a very easy one
 
+Download the challenge file
 
+```
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/CTF/picoCTF_2024/cryptography/interendec]
+└─$ ls -la
+total 12
+drwxr-xr-x 2 bl4ck4non bl4ck4non 4096 Mar 25 08:01 .
+drwxr-xr-x 3 bl4ck4non bl4ck4non 4096 Mar 25 08:00 ..
+-rw-r--r-- 1 bl4ck4non bl4ck4non   73 Mar 25 08:00 enc_flag
+                                                                                                                                                                                                                                             
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/CTF/picoCTF_2024/cryptography/interendec]
+└─$ cat enc_flag          
+YidkM0JxZGtwQlRYdHFhR3g2YUhsZmF6TnFlVGwzWVROclh6ZzJhMnd6TW1zeWZRPT0nCg==
+```
+So we've got a base64 encoded text, lets decode this
 
+command:```echo "YidkM0JxZGtwQlRYdHFhR3g2YUhsZmF6TnFlVGwzWVROclh6ZzJhMnd6TW1zeWZRPT0nCg==" | base64 -d```
 
+```
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/CTF/picoCTF_2024/cryptography/interendec]
+└─$ echo "YidkM0JxZGtwQlRYdHFhR3g2YUhsZmF6TnFlVGwzWVROclh6ZzJhMnd6TW1zeWZRPT0nCg==" | base64 -d
+b'd3BqdkpBTXtqaGx6aHlfazNqeTl3YTNrXzg2a2wzMmsyfQ=='
+```
+We got another base64 encoded text, lets decode further
 
+command:```echo "d3BqdkpBTXtqaGx6aHlfazNqeTl3YTNrXzg2a2wzMmsyfQ==" | base64 -d```
+
+```
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/CTF/picoCTF_2024/cryptography/interendec]
+└─$ echo "d3BqdkpBTXtqaGx6aHlfazNqeTl3YTNrXzg2a2wzMmsyfQ==" | base64 -d                        
+wpjvJAM{jhlzhy_k3jy9wa3k_86kl32k2}
+```
+Now we've got a rot cipher, we can decode this using [dcode.fr](https://www.dcode.fr/rot-cipher)
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/ea922ef8-6f3a-4b15-80c1-53fe679db01d)
+
+We got our flag
+
+FLAG:- ```picoCTF{caesar_d3cr9pt3d_86de32d2}```
+
+--------------------------------------
+
+## rsa_oracle (300 points)
+<hr>
 
 
 

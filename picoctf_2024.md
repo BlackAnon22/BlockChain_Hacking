@@ -940,6 +940,9 @@ FLAG:- ```picoCTF{ax8mC0RU6ve_NX85l4ax8mCl_746dfa39}```
 ## endianness-v2 (300 points)
 <hr>
 
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/c87966da-b1c4-4655-89e2-44b2734398d1)
+
+
 
 ------------------------------
 

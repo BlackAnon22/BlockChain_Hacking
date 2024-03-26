@@ -1284,10 +1284,117 @@ FLAG:- ```picoCTF{caesar_d3cr9pt3d_86de32d2}```
 ## rsa_oracle (300 points)
 <hr>
 
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/97dcfbd7-47d1-457f-a703-864d748210fe)
 
+Download the challenge files
 
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/532eadf0-bbfa-46fd-a502-7bc90713d5ce)
 
+We basically are meant to use that password to decrypt the cipher text. They also provided us an instance of the oracle that was used to encrypt the password
 
+We'll try to recover the password using rsa actually, we can use this python script my teammate wrote
+
+```python
+import subprocess
+from math import gcd
+from warnings import filterwarnings
+
+from Crypto.Util.number import bytes_to_long, long_to_bytes
+from pwn import *
+
+def establish_connection():
+    io = remote("titan.picoctf.net", 56147)
+    context.log_level = 'info'
+    filterwarnings("ignore")
+    return io
+
+def send_message_and_get_response(io, message):
+    io.sendline("E")
+    io.sendline(message)
+    io.recvuntil("n) ")
+    response = int(io.recvline().decode())
+    return response
+
+def calculate_n(c1, c2, m1, m2, e):
+    k1n = (bytes_to_long(m1) ** e) - c1
+    k2n = (bytes_to_long(m2) ** e) - c2
+    n = gcd(k1n, k2n)
+    return n
+
+def read_encrypted_password():
+    with open("password.enc", "r") as fp:
+        ct = fp.read()
+    return ct
+
+def main():
+    io = establish_connection()
+
+    m1 = b'a'
+    m2 = b'b'
+    e = 65537 
+
+    c1 = send_message_and_get_response(io, m1)
+    c2 = send_message_and_get_response(io, m2)
+
+    n = calculate_n(c1, c2, m1, m2, e)
+    assert c1 == pow(bytes_to_long(m1), e, n)
+    print(f"n: {n}")
+
+    ct = read_encrypted_password()
+    pad = n + int(ct)
+    print(f"pad: {pad}")
+
+    io.sendline("D")
+    io.sendline(str(pad))
+    
+    io.recvuntil(": ")
+    pt = bytes.fromhex(io.recvline().decode().split()[-1])
+    print(f"AES Password: {pt}")
+
+if __name__ == "__main__":
+    main()
+```
+
+The script establishes a connection to the remote server, sends encrypted messages, calculates a value based on the received ciphertexts and plaintexts, reads an encrypted password from a file, calculates a value based on the password and server's responses, sends this value to the server, and retrieves a decrypted AES password.
+
+Lets run the script
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/c56a7218-99fd-46a4-8827-1af1a3b50f4e)
+
+You can see we got the AES password to be ```60f50```.
+
+Nw that we have the password lets decrypt the message . We can use openssl for that
+
+command:```openssl enc -d -aes-256-cbc -in secret.enc -out abeg.data```
+
+```
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/CTF/picoCTF_2024/cryptography/rsa_oracle]
+└─$ openssl enc -d -aes-256-cbc -in secret.enc -out abeg.data 
+enter AES-256-CBC decryption password:
+*** WARNING : deprecated key derivation used.
+Using -iter or -pbkdf2 would be better.
+                                                                                                                                                                                                                                             
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/CTF/picoCTF_2024/cryptography/rsa_oracle]
+└─$ ls -la                                                   
+total 24
+drwxr-xr-x 2 bl4ck4non bl4ck4non 4096 Mar 26 14:50 .
+drwxr-xr-x 4 bl4ck4non bl4ck4non 4096 Mar 26 14:28 ..
+-rw-r--r-- 1 bl4ck4non bl4ck4non   38 Mar 26 14:50 abeg.data
+-rw-r--r-- 1 bl4ck4non bl4ck4non 1327 Mar 26 14:46 bankai.py
+-rw-r--r-- 1 bl4ck4non bl4ck4non  154 Mar 26 14:29 password.enc
+-rw-r--r-- 1 bl4ck4non bl4ck4non   64 Mar 26 14:29 secret.enc
+                                                                                                                                                                                                                                             
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/CTF/picoCTF_2024/cryptography/rsa_oracle]
+└─$ file abeg.data    
+abeg.data: ASCII text, with no line terminators
+                                                                                                                                                                                                                                             
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/CTF/picoCTF_2024/cryptography/rsa_oracle]
+└─$ cat abeg.data  
+picoCTF{su((3ss_(r@ck1ng_r3@_60f50766}
+```
+We got our flag hehe😎
+
+FLAG:- ```picoCTF{su((3ss_(r@ck1ng_r3@_60f50766}```
 
 
 

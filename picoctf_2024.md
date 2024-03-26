@@ -962,6 +962,59 @@ Lets view the hex of the challenge file using a hexeditor
 
 You'll see that the 3rd and 4th byte for each 8 chunks has the header of a jpeg file, but then it's actually swapped. Normal header for a jpeg file is ```FF D8 FF EE``` but then from the hex we have this ```FF D8 FF 46```
 
+To correct this, we'll be using this python script
+
+```python
+import textwrap
+
+def swap_chunks(data):
+    chunks = []
+    swapped_data = ""
+
+    for i in range(0, len(data), 4):
+        chunks.append(data[i:i+4])
+
+    lt_idx = chunks[-1]
+    chunks = chunks[:-1]
+    swapped = b""
+
+    for i in range(len(chunks)):
+        swapped += chunks[i][::-1]
+            
+
+    return swapped
+
+def main():
+    input_file = 'challengefile'
+    output_file = 'dump'
+
+    with open(input_file, 'rb') as f:
+        file_data = f.read()
+
+    swapped_data = swap_chunks(file_data)
+
+
+    with open(output_file, 'wb') as f:
+        f.write(swapped_data)
+
+
+if __name__ == "__main__":
+    main()
+```
+This script reads binary data from a file named 'challengefile', swaps the order of every four bytes within the data, and then writes the swapped data to a file named 'dump'.
+
+Lets run this
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/0fc6483b-6406-41a1-bc3f-741751a062cf)
+
+We got a jpeg file after running the script. Lets view this image using an image viewer
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/5a5db82e-9b53-4b33-8d19-35038a78420f)
+
+We got our flag
+
+FLAG:- ```picoCTF{cert!f1Ed_iNd!4n_s0rrY_3nDian_94cc03f3}```
+
 ------------------------------
 
 ## Blast from the Past (300 points)

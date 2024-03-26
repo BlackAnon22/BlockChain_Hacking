@@ -940,9 +940,27 @@ FLAG:- ```picoCTF{ax8mC0RU6ve_NX85l4ax8mCl_746dfa39}```
 ## endianness-v2 (300 points)
 <hr>
 
-![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/c87966da-b1c4-4655-89e2-44b2734398d1)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/b6510f0b-69ac-4614-bbd4-df5b95614e58)
 
+Download the challenge file
 
+```
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/CTF/picoCTF_2024/forensics/endianness-v2]
+└─$ ls -la
+total 12
+drwxr-xr-x  2 bl4ck4non bl4ck4non 4096 Mar 26 13:41 .
+drwxr-xr-x 10 bl4ck4non bl4ck4non 4096 Mar 25 17:34 ..
+-rw-r--r--  1 bl4ck4non bl4ck4non 3428 Mar 26 13:41 challengefile
+                                                                                                                                                                                                                                             
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/CTF/picoCTF_2024/forensics/endianness-v2]
+└─$ file challengefile 
+challengefile: data
+```
+Lets view the hex of the challenge file using a hexeditor
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/70d3ef8e-7226-4a7e-a912-67dfcc7d8497)
+
+You'll see that the 3rd and 4th byte for each 8 chunks has the header of a jpeg file, but then it's actually swapped. Normal header for a jpeg file is ```FF D8 FF EE``` but then from the hex we have this ```FF D8 FF 46```
 
 ------------------------------
 

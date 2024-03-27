@@ -793,8 +793,29 @@ for (const element of step) { ... }: This iterates over each element in the curr
 assert(typeof xss === 'string'): This checks that the current element is a string.
 assert(element.length < 50): This checks that the length of the current element is less than 50 characters.
 ```
-Now, when all these conditions are met we get a message that says ```visiting```, if the conditions aren't met, then we get the ```invalid recipe``` message
+Now, when all these conditions are met we get a message that says ```visiting```, if the conditions aren't met, then we get the ```invalid recipe``` message. 
 
+Well, the recipes are stored in the ```index.js``` file 
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/8251a784-bc9e-4b65-9351-b5c1960451cb)
+
+Lets analyze this script
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/c30850ce-ad0f-4450-a49e-0aad7e66099c)
+
+So we have the recipe and the elements array
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/9a0bb245-ee60-4750-8191-81f65c534aee)
+
+This script defines a function called evaluate that takes any number of arguments and checks if they match a recipe in an array. If the first and second arguments match ing equal to 'XSS', the script evaluates the xssproperty of thestateobject as a JavaScript expression using theevalfunction. If theresultis not equal to'XSS', the function simply returns the result.
+
+Now that we've seen what the scripts are doing lets start the docker instance
+
+You can run the ```index.mjs``` script using node
+
+command:```node index.mjs```
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/30309d42-f1d5-41a5-bc93-15375836c4b4)
 
 
 

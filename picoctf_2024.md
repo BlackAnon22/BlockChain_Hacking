@@ -1,6 +1,6 @@
 My teammates(LocalMen) and I participated in the picoCTF_2024 organized by Carnegie Mellon University, which took place between March 12, 2024 to March 26, 2024. It was a great learning experience and I really learnt a lot.
 
-![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/fd900f40-a20f-4ef3-9793-118345219d87)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/18a0a578-afea-4870-b3c2-a5d3bbcb4923)
 ![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/7ea096f1-898f-482f-ada4-e27c10639cbe)
 
 This is a writeup of the challenges I solved during the event
@@ -746,6 +746,55 @@ FLAG:- ```picoCTF{c3rt!fi3d_Xp3rt_tr1ckst3r_48785c0e}```
 
 ## Elements (500 points)
 <hr>
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/3f36f5f8-5d53-4169-9bcf-8070f910756c)
+
+We don't need to launch the instance yet, lets try to download the source code and analyze it.
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/adcdb8b9-4d43-4237-8a65-a7e993212b13)
+
+The ```flag.txt``` contains a fake flag so chill we haven't solved it yet😂
+
+```
+┌──(bl4ck4non👽bl4ck4non-sec)-[~/…/CTF/picoCTF_2024/web/elements]
+└─$ cat flag.txt       
+picoCTF{test_flag}
+```
+You see??😅
+
+Lets start by analyzing the ```index.mjs``` file
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/8a0e251b-1074-45d8-82dd-bb694ff93d53)
+
+Well, what this guy does is just spawn the chromium instance we were given, so we'll have to install it for experiment purposes.
+
+To install it just run the command ```sudo dpkg -i chrome.deb```
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/78905be3-c9ea-43c0-ab2d-c8149232934a)
+
+Moving on, 
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/37921763-bd58-4c91-858f-4d9f2cd34c6e)
+
+So, when we run node on the ```index.mjs``` file we can navigate to the url ```http://127.0.0.1:8080``` to view the webpage. You can also see that we have the CSP header there, well that header is pain actually💀. You can read more about the csp header [here](https://content-security-policy.com/)
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/b5524ae3-8480-40e3-8784-bad688763f70)
+
+This is more of a conditional statement, if the pathname is ```/``` the ```content-type``` header is set to ```text/html```, if the pathname is ```/index.js``` the ```content-type``` is set to ```text/javascript```. Lastly, if the pathname is ```/remoteCraft```, the code parses a URL search parameter named recipe and extracting two variables, recipe and xss. It then performs several assertions to validate the input:
+```
+assert(typeof xss === 'string'): This checks that xss is a string.
+assert(xss.length < 300): This checks that the length of xss is less than 300 characters.
+assert(recipe instanceof Array): This checks that recipe is an array.
+assert(recipe.length < 50): This checks that the length of recipe is less than 50.
+for (const step of recipe) { ... }: This iterates over each element in the recipe array.
+assert(step instanceof Array): This checks that each element in the recipe array is an array.
+assert(step.length === 2): This checks that each element in the recipe array has a length of 2.
+for (const element of step) { ... }: This iterates over each element in the current step array.
+assert(typeof xss === 'string'): This checks that the current element is a string.
+assert(element.length < 50): This checks that the length of the current element is less than 50 characters.
+```
+Now, when all these conditions are met we get a message that says ```visiting```, if the conditions aren't met, then we get the ```invalid recipe``` message
+
 
 
 

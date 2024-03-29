@@ -1160,11 +1160,11 @@ drwxr-xr-x 10 bl4ck4non bl4ck4non 4096 Mar 25 17:34 ..
 └─$ file challengefile 
 challengefile: data
 ```
-Lets view the hex of the challenge file using a hexeditor
+Lets view the hex of the challenge file 
 
-![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/70d3ef8e-7226-4a7e-a912-67dfcc7d8497)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/8678bb3e-91ae-4468-ba10-7bd301345700)
 
-You'll see that the 3rd and 4th byte for each 8 chunks has the header of a jpeg file, but then it's actually swapped. Normal header for a jpeg file is ```FF D8 FF EE``` but then from the hex we have this ```FF D8 FF 46```
+You'll see that the starting byte for this file resembls that of a jpg file, but then it's actually swapped. Normal starting byte for a jpeg file is ```FF D8 FF E0``` but then from the hex we have this ``` e0ff d8ff```
 
 To correct this, we'll be using this python script
 

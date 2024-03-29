@@ -955,6 +955,16 @@ command:```python bankai.py```
 
 ![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/6f4213ed-17ae-4fb1-9550-f6ea780e5e31)
 
+You can see that the script crashed when it got to the character "l", this means the character "l" is indeed the 8th index of the flag. 
+
+To get the 9th index
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/6948b717-b7df-49a2-bdbe-bec2ced975a7)
+
+Just edit those 2 variables and run the script again, you'll keep doing this until you get to the last character
+
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/1677993d-7370-4a93-8601-9de4125609ef)
+
 
 # Forensics
 

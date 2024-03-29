@@ -953,7 +953,7 @@ This script performs a binary search to find the missing character in a flag by 
 
 command:```python bankai.py```
 
-![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/6f4213ed-17ae-4fb1-9550-f6ea780e5e31)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/2c00e7e2-8f50-4f15-a9a2-a72c7a9a2331)
 
 You can see that the script crashed when it got to the character "l", this means the character "l" is indeed the 8th index of the flag. 
 

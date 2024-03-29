@@ -953,6 +953,8 @@ This script performs a binary search to find the missing character in a flag by 
 
 command:```python bankai.py```
 
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/6f4213ed-17ae-4fb1-9550-f6ea780e5e31)
+
 
 # Forensics
 

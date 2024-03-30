@@ -967,6 +967,7 @@ Just edit those 2 variables and run the script again
 ![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/497f0327-e211-40f3-a456-4f8342248641)
 ![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/724bb9f6-df25-431f-9542-56251bfd1b74)
 ![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/326b6a6d-077c-4b5b-899a-871f9cb526a7)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/6a2fa5ab-4d7f-4b2b-9d67-9da4e9081e61)
 
 You'll keep running this until you get to the last character, the flag length is quite long though
 

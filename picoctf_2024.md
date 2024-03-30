@@ -951,6 +951,8 @@ while True:
 ```
 This script performs a binary search to find the missing character in a flag by sending GET requests to a URL with a parameter 'recipe' set to a JSON object containing an XSS payload. The iframe is being used to trigger a ConnectionRefusedError to determine if the current character being tested is the missing character in the flag. The iframe is being added to the body that contains a script from the same origin as the parent page. This is a common technique used in XSS attacks to bypass the same-origin policy and execute scripts from the same origin as the parent page. In this case, the iframe in the flag by triggering a ConnectionRefusedError when the correct character is found. All you have to do is change the url in the script to that of your challenge instance and then run the script
 
+PS: This script requires good internet connection to get accurate results
+
 command:```python bankai.py```
 
 ![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/2c00e7e2-8f50-4f15-a9a2-a72c7a9a2331)

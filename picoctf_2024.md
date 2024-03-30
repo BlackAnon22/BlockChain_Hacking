@@ -961,11 +961,17 @@ To get the 9th index
 
 ![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/6948b717-b7df-49a2-bdbe-bec2ced975a7)
 
-Just edit those 2 variables and run the script again, you'll keep doing this until you get to the last character
-
+Just edit those 2 variables and run the script again
 ![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/497f0327-e211-40f3-a456-4f8342248641)
 ![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/724bb9f6-df25-431f-9542-56251bfd1b74)
 ![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/326b6a6d-077c-4b5b-899a-871f9cb526a7)
+
+You'll keep running this until you get to the last character, the flag length is quite long though
+
+FLAG:- ```picoCTF{little_alchemy_was_the_0g_game_does_anyone_rememb3r_9889fd4a}```
+
+
+
 
 
 # Forensics

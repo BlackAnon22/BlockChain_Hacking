@@ -963,7 +963,7 @@ To get the 9th index
 
 Just edit those 2 variables and run the script again, you'll keep doing this until you get to the last character
 
-![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/1677993d-7370-4a93-8601-9de4125609ef)
+![image](https://github.com/BlackAnon22/BlockChain_Hacking/assets/67879936/497f0327-e211-40f3-a456-4f8342248641)
 
 
 # Forensics

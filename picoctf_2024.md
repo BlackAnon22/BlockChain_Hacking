@@ -11,7 +11,7 @@ This is a writeup of the challenges I solved during the event
 ## General Skills
 -      Super SSH (25 points)
 -      Commitment Issues (50 points)
--      Time Machine (50 points)
+-      Time Machine (50 points) 
 -      Blame Game (75 points)
 -      Collaborative Development (75 points)
 -      binhexa (100 points)

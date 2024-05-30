@@ -1,10 +1,1 @@
-# BlockChain Hacking
-
-Blockchain Hacking challenge solutions from various ctfs and wargames
-
-Also contains contracts I learnt from all the courses I took  
- 
- 
-currently away fr fr
-
-Will be back soon
+I'm back like I never left :)

@@ -24,4 +24,4 @@ contract IfElse {
         // the "?" operator is called the ternary operator
         return _x < 10 ? 1 : 2; // if x is less than 10 return 1, otherwise return 2
     }    
-}
+} 

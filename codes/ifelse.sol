@@ -6,7 +6,7 @@ contract IfElse {
     
     function foo(uint256 x) public pure returns (uint256) {
         if (x<10) {
-            return 0;
+            return 0; 
         } else if (x<20) {
             return 1;
         } else {

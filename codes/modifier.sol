@@ -28,6 +28,9 @@ contract FunctionModifier {
         owner = _newOwner;
     }
 
+    // Modifiers can be called before and / or after a function.
+    // This modifier prevents a function from being called while
+    // it is still executing.
     modifier noReentrancy() {
         require(!locked, "Reentrancy not allowed");
         locked = true;

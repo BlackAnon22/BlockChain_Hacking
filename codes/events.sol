@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.19;
 
-// This declares an event named "HighestBidIncreased" that logs the bidder's address and the bid amount.
+// This declares an event named "HighestPayBidder" that logs the bidder's address and the bid amount.
 event HigghestPayBidder(address bidder, uint amount); // creating an event
 
 contract SimpleAuction {

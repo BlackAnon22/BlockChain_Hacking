@@ -1,66 +1,43 @@
-//SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.19;
 
-import{PriceConverter} from "./PriceConverter.sol";
-
-contract FundMe {
-
-    using PriceConverter for uint256; // To attach the functions in our PriceConversion.sol file
-
-    uint256 public minimumUsd = 5e18;
-
-    address[] public funders;
-    mapping(address funder => uint256 amountFunded) public addressToAmountFunded;
-
+contract FunctionModifier {
     address public owner;
+    uint256 public x = 10;
+    bool public locked;
 
     constructor() {
-        // The owner is set to the address that deploys the contract
         owner = msg.sender;
     }
 
-    // To send money to our contract
-    // Allow users to send $
-    // Have a mininum $ sent, $5
-    function fund() public payable  { 
-        require(msg.value.getConversionRate() >= minimumUsd, "did not send enough ETH");
-        funders.push(msg.sender);
-        //addressToAmountFunded[msg.sender] = addressToAmountFunded[msg.sender] + msg.value;
-        addressToAmountFunded[msg.sender] += msg.value; // this is more condensed 
-    }
-
-    function withdraw() public onlyOwner { 
-        for (uint256 funderIndex = 0; funderIndex < funders.length ; funderIndex++) {
-            // to access the 0th element of the funders array, since it is an array of addresses
-            address funder = funders[funderIndex];  
-            // to reset our mapping addressToAmountFunded
-            addressToAmountFunded[funder] = 0;
-        }
-
-        // To reset the array
-        funders = new address[](0); // The "new" keyword is used to deploy a different contract
-
-        // To withdraw funds
-
-        // 1. transfer
-        // msg.sender = type address
-        // payable(msg.sender) == type payable address
-       // payable(msg.sender).transfer(address(this).balance);
-
-       // 2. send
-       //bool sendSuccess = payable(msg.sender).send(address(this).balance);
-       //require(sendSuccess, "Send Failed");
-
-       // 3.call
-       (bool callSuccess, ) = payable(msg.sender).call{value: address(this).balance}("");
-       require(callSuccess, "Call Failed"); /// requiring callSuccess is true, other wise prints an error that says "call failed"
-        
-    }
-
-    modifier onlyOwner {
-        require(msg.sender == owner, "Sender is not owner!");
+    modifier OnlyOwner() {
+        require(msg.sender == owner, "Sender is not owner");
         _;
     }
 
+    modifier validAddress(address _addr) {
+        require(_addr != address(0), "Not a valid address");
+        _;
+    }
+
+    function changeOwner(address _newOwner) public OnlyOwner validAddress(_newOwner) {
+        owner = _newOwner;
+    }
+
+    modifier noReentrancy() {
+        require(!locked, "Reentrancy not allowed");
+        locked = true;
+        _;
+        locked = false;
+    }
+
+    function decrement(uint256 i) public noReentrancy {
+        x -= 1;
+
+        if (i > 1) {
+            decrement(i - 1);
+        }
+    }
 }
+

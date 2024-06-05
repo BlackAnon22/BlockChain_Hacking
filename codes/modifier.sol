@@ -12,6 +12,7 @@ contract FunctionModifier {
     }
 
     modifier OnlyOwner() {
+        // Set the transaction sender as the owner of the contract.
         require(msg.sender == owner, "Sender is not owner");
         _;
     }

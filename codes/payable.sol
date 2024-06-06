@@ -9,7 +9,7 @@ contract FundMe {
     // To send money to our contract
     // Allow users to send $
     // Have a mininum $ sent, $5
-    function fund() public payable  { 
+    function fund() public payable  {  
         msg.value;
 
     }

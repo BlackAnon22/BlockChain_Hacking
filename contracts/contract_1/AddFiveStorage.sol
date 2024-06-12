@@ -7,6 +7,7 @@ import {SimpleStorage} from "./SimpleStorage.sol";
 
 contract AddFiveStorage is SimpleStorage {
 
+    // We need to tell solidity to override the `store()` function in the simplestorage contract
     function store(uint256 _newNumber) public override {
         MyFavoriteNumber = _newNumber + 5;
     }

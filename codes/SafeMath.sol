@@ -4,7 +4,7 @@
 // Deploying this with a version 0.8.0, actually gives an error, so it basically doesn't add it
 
 // SPDX-License-Identifier: MIT
-
+ 
 pragma solidity ^0.6.0;
 
 contract SafeMathTester { 

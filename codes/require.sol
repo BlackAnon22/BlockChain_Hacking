@@ -6,7 +6,7 @@ pragma solidity ^0.8.0;
 
 contract FundMe {
 
-    // To send money to our contract
+    // To send money to our contract 
     // Allow users to send $
     // Have a mininum $ sent, $5
     function fund() public payable  {  

@@ -1,4 +1,4 @@
-
+// Here's an example of using msg.sender and updating a mapping:
 
 mapping (address => uint) favoriteNumber;
 

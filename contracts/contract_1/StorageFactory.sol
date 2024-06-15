@@ -13,7 +13,7 @@ contract StorageFactory{
      
     // allows us to store a number in a specific SimpleStorage contract identified by its index in the array
     function sfStore(uint256 _simpleStorageIndex, uint256 _newSimpleStorageNumber) public {
-        //SimpleStorage mySimpleStorage = listofsimpleStorageContracts[_simpleStorageIndex];
+        //SimpleStorage mySimpleStorage = listofsimpleStorageContracts[_simpleStorageIndex]; 
         //mySimpleStorage.store(_newSimpleStorageNumber); 
         listofsimpleStorageContracts[_simpleStorageIndex].store(_newSimpleStorageNumber); //this is more condensed, commented code also works tho 
     }

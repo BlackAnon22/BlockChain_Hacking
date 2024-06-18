@@ -1,4 +1,6 @@
 // A contract that gets the name of people alongside their favorite anime characters
+// Kind of dumped this project lmao
+// I'll be back to it tho
 
 // SPDX-License-Identifier: MIT
 

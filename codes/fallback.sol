@@ -10,7 +10,7 @@ contract FallBack{
 
     }
 
-    fallback() external payable { 
+    fallback() external payable {  
         result = 2;
     }
 }

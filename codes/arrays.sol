@@ -3,7 +3,7 @@
 pragma solidity ^0.5.0;
 
 contract test{
-    function testArray() public pure{
+    function testArray() public pure{ 
         uint len = 7;
     
         //creating a dynamic array

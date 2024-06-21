@@ -14,7 +14,7 @@ contract test{
 
         assert(a.length == 7);
         assert(b.length == len);
-
+ 
         //access array variable
         a[6] == 9;
 

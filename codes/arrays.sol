@@ -9,7 +9,7 @@ contract test{
         //creating a dynamic array
         uint[] memory a = new uint[](7);
 
-        //bytes is the same as byte[]
+        //bytes is the same as byte[] 
         bytes memory b = new bytes(len);
 
         assert(a.length == 7);

@@ -11,7 +11,7 @@ import {MockV3Aggregator} from "../test/mocks/MockV3Aggregator.sol";
 
 contract HelperConfig is Script {
     // If we are on a local anvil chain, deploy mocks
-    // Otherwise, grab the existing address from the live network
+    // Otherwise, grab the existing address from the live network 
 
     NetworkConfig public activeNetworkConfig;
 

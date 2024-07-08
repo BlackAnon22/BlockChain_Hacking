@@ -7,7 +7,7 @@ contract FallBack{
 
     receive() external payable {
         result = 1;
-
+ 
     }
 
     fallback() external payable {  

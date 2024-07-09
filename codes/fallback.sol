@@ -5,7 +5,7 @@ pragma solidity ^0.8.0;
 contract FallBack{
     uint256 public result;
 
-    receive() external payable {
+    receive() external payable { 
         result = 1;
  
     }

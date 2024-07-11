@@ -11,10 +11,10 @@ contract FundMeTest is Test {
 
     // intended to be executed before any test function, here is where we will deploy our contracts
     function setUp() external {
-        number = 2;
+        number = 2; 
     }
 
-    function testDemo() public {
+    function testDemo() public { 
         assertEq(number, 2); 
     }
 }

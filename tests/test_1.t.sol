@@ -13,7 +13,7 @@ contract FundMeTest is Test {
     function setUp() external {
         number = 2; 
     }
-
+ 
     function testDemo() public { 
         assertEq(number, 2); 
     }

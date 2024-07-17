@@ -8,7 +8,7 @@ import {Test} from "forge-std/Test.sol";
  
 contract FundMeTest is Test {
     uint256 number = 1;
-  
+   
     // intended to be executed before any test function, here is where we will deploy our contracts 
     function setUp() external { 
         number = 2; 

@@ -15,7 +15,7 @@ contract SimpleStorage{
         string name;
     }
  
-    // creating a dynamic array
+    // creating a dynamic array 
     Person[] public listOfPeople;
 
     // creating a dictionary

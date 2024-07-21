@@ -12,7 +12,7 @@ contract SimpleStorage{
     // creating a new type "Person"
     struct Person{ 
         uint256 favoriteNumber; 
-        string name;
+        string name; 
     }
  
     // creating a dynamic array 

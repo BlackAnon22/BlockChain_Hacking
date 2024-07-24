@@ -9,7 +9,7 @@ contract SimpleStorage{
     // this defaults to 0    
     uint256 MyFavoriteNumber; 
 
-    // creating a new type "Person"
+    // creating a new type "Person" 
     struct Person{  
         uint256 favoriteNumber; 
         string name; 

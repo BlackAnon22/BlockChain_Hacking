@@ -17,7 +17,7 @@ contract SimpleStorage{
  
     // creating a dynamic array   
     Person[] public listOfPeople;
-
+ 
     // creating a dictionary
     mapping(string => uint256) public nameOfFavoriteNumber;
 

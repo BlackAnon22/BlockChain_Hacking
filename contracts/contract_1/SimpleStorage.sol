@@ -13,7 +13,7 @@ contract SimpleStorage{
     struct Person{    
         uint256 favoriteNumber;    
         string name; 
-    }  
+    }   
  
     // creating a dynamic array   
     Person[] public listOfPeople;

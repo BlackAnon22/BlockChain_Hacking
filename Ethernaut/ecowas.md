@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/288a43dd-1246-4b7d-9b69-04ce7fb7456b)# Logusus
+# Logusus
 <hr>
 
 `1.png`

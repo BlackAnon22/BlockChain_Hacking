@@ -249,6 +249,58 @@ Checking my netcat listener
 
 We got a reverse shell hehe, lets stabilize this
 
+```
+python3 -c “import pty;pty.spawn(‘/bin/bash’)”
+ctrl + z (to background)
+stty raw -echo && fg
+export TERM=screen
+```
+
+`11`
+
+Nice, we can grab the user flag
+
+`12`
+
+Lets escalate our privileges
+
+
+
+# Privilege Escalation
+
+From the name of the lab we can see the path to priv esc actually (CVE-2023-22809)
+
+Doing my research
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   

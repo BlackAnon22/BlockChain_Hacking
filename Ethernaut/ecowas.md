@@ -164,24 +164,20 @@ Lets see if we can grab the root flag
 
 `28`
 
+We got a base64 encoded text, lets decode this
+
+command:```echo "TG9ndXN1c19ncm91cF8xMzcwNi1qYm02d296dWQ0NWNydnlveDNsb2h1b2Fsd2QxbWttdwo=" | base64 -d```
+
+`flag`
+
+Niceeeeeee, we got our flag😎
+
+FLAG:-```Logusus_group_13706-jbm6wozud45crvyox3lohuoalwd1mkmw```
+
+-----------------------------------------
 
 
 
-When you check the two ids we have, there's some sort of similarities
-
-```
-62fba5c1d2803ed44e507281
-62fba61ed2803ed44e507282
-```
-From what we have above you should be able to spot 2 differences, the let me break it down further
-
-```
-62fba"5c1"d2803ed44e50728"1"
-62fba"61e"d2803ed44e50728"2"
-```
-It should be more visible now, since there was no rate limiting on this particular target it means I can bruteforce hell out of this target💀😂
-
-What I did was generate a wordlist using crunch, then I did a bit of rotation for that last number
 
 
 

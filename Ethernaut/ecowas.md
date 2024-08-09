@@ -106,7 +106,7 @@ Have you ever seen a directory traversal using a file upload path??
 
 Well, let me show you, this might be unintended though
 
-I actually figured this out after solving the lab, did a bit of experiment after solving the lab. That was when I found out that I had been trapped in a Ganjutsu😅.
+I actually figured this out after solving the lab, did a bit of experiment after solving the lab. That was when I found out that I had been trapped in a Genjutsu😅.
 
 Lets get the flag😎
 

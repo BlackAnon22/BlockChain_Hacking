@@ -366,19 +366,81 @@ command:```sqlmap -r req1.txt --dbs```
 
 `10`
 
+We got 8 databaes, the most interesting database here is the credentials database. Lets dump the tables in this database
+
+command:```sqlmap -r req1.txt -D credentials --tables```
+
+`11`
+
+We have a table in that particular database, lets dump the contents of that particular table
+
+command:```sqlmap -r req1.txt -D credentials -T users --columns --dump```
+
+`12`
+
+we got user credentials, but then these creds weren't working for the login page
+
+Recall we have a port running the ssh service(port 22), lets ssh into the server as user ```green```
+
+command:```ssh green@10.8.0.3```
+
+`13`
+
+We are in, the user flag isn't present on this machine this means we have to escalate our privileges to grab the root flag
+
+
+## Privilege Escalation (10.8.0.3)
+
+Running the `sudo -l` command
+
+`14`
+
+We can see from the above screenshot that nmap can be used to help escalate our privileges
+
+Lets grab a command from [GTFOBins](https://gtfobins.github.io/)
+
+command:```sudo nmap -iL /root/proof.txt```
+
+This helps us read the root flag without getting a root shell
+
+`15`
+
+We got the root flag
+
+We have 2 flags left to capture
+
+Lets move on to the next target
 
 
 
+##  PortScanning (10.8.0.2)
+
+We'll be using rustscan
+
+command:```rustscan -a 10.8.0.2 -- -A```
+
+`16`
+
+From our scan we have 2 open ports, port 22 which runs the ssh service and port 80 which runs the http service. Our enumeration today will be focused on port 80
+
+## Enumeration (10.8.0.2)
+
+Navigate to the webpage
+
+`17`
+
+We have a file upload functionality here, lets fuzz for directories to see if we have an ```uploads``` directory
+
+command:```ffuf -u "http://10.8.0.2/FUZZ" -w /usr/share/wordlists/dirb/common.txt -e .zip,.sql,.php,.phtml,.bak,.backup ```
+
+`18`
+
+Yup, there's an ```uploads``` directory.
+
+To get RCE on this target we'll bypass the file upload functionality so we can upload our malicious script
 
 
-
-
-
-
-
-
-
-
+## Exploitation (10.8.0.2)
 
 
   

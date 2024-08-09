@@ -138,8 +138,15 @@ Yup, something like that
 
 It's time for some directory traversal, since we know that the user flag is located in ```/home/local.txt``` and the root flag is located in ```/root/proof.txt```, we'll edit ```sqli.png``` and replace with ```/../../../home/local.txt``` and ```/../../../root/proof.txt```, one of these should get us the flag
 
+#### request
 `24`
+
+#### response
 `25`
+
+We got that base64 encoded text from our response, lets try to decode this
+
+
 
 
 When you check the two ids we have, there's some sort of similarities

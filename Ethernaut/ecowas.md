@@ -503,9 +503,31 @@ To get the root flag, we'll have to escalate our privileges
 
 ## Privilege Escalation (10.8.0.2)
 
+On this particular server we have a user ```green```, if you recall when we were dumping the database of the server we exploited earlier (10.8.0.3) we found the password of user green to be ```xR297gSTr```, lets switch user to this using the password we have
 
+command:```su green```
 
+`28`
 
+Niceeeeee, when you run the `id` command you'll see that user green belongs to an interesting group
+
+`29`
+
+From the above screenshot we can see that the user belongs to the ```docker``` group, we can use this to escalate our privileges
+
+We can use this payload
+
+payload:```docker run -v /:/mnt --rm -it alpine chroot /mnt sh```
+
+`30`
+
+Smoooooth, we got root shell
+
+Lets grab the root flag
+
+`31`
+
+That's all
 
 
 

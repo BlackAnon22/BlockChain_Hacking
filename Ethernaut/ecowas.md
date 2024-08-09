@@ -268,11 +268,34 @@ Lets escalate our privileges
 
 # Privilege Escalation
 
-From the name of the lab we can see the path to priv esc actually (CVE-2023-22809)
+Running the ```sudo -l``` command
+
+`13`
+
+We can use ```sudoedit``` on ```/etc/hosts``` to escalate our privileges
+
+From the name of the lab we can see name of this particular CVE (CVE-2023-22809)
 
 Doing my research
 
+`14`
 
+Niceeeeeee, root don sure😂
+
+I actually used this [blog](https://exploit-notes.hdks.org/exploit/linux/privilege-escalation/sudo/sudoedit-privilege-escalation/)
+
+`15`
+
+So to exploit this we have to specify the file we want to edit then run ```sudoedit``` on the ```/etc/hosts``` file
+
+To get the root flag you can choose to either get a root shell or just read the root flag direcly
+
+I actually didn't get a root shell, which means I read the root flag directly
+
+commands
+```
+
+```
 
 
 

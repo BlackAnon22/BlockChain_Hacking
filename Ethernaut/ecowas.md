@@ -1,4 +1,4 @@
-# Logusus
+# Logusus (Medium)
 <hr>
 
 `1.png`
@@ -176,9 +176,27 @@ FLAG:-```Logusus_group_13706-jbm6wozud45crvyox3lohuoalwd1mkmw```
 
 -----------------------------------------
 
+# Text4Shell & CVE-2023-22809 (Easy)
+<hr>
+
+`1`
+
+## PortScanning
+
+Lets use rustscan to scan for open ports
+
+command:```rustscan -a 10.8.0.2 -- -A```
+
+`2`
+
+From our scan we have 2 open ports, port 22 which runs the ssh service and port 8080 which runs the http service. Our enumeration today will be focused on port 80
 
 
+## Enumeration (Port 80)
 
+Navigate to the webpage
+
+`3`
 
 
 

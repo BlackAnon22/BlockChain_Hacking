@@ -308,22 +308,63 @@ We got our root flag
 # Green (Easy)
 <hr>
 
+`1`
+`2`
+
+For this lab we have 2 different sub labs (2 different ips)
+
+Lets get started
+
+## Portscanning (10.8.0.3)
+
+We'll use rustscan
+
+command:```rustscan -a 10.8.0.3 -- -A```
+
+`3`
+
+We have 2 open ports, port 22 which runs the ssh service and port 80 which runs the http service. Our enumeration will be focused on port 80
+
+## Enumeration (10.8.03)
+
+Navigate to the webpage
+
+`4`
+
+The language in the above screenshot is French, we can use the google translate feature to translate the page
+
+`5`
+
+We can see a login page
+
+Well, we can use default creds to gain access here
+
+username:```admin```
+password:```password```
+
+`6`
+`7`
+
+We got admin access, and then a form actually
+
+This actually screams SQLi. Lets exploit this
 
 
+# Exploitation (10.8.0.3)
 
+I used sqlmap for this
 
+`8`
 
+Capture this request on burpsuite and save it in a file `req1.txt`
 
+`9`
 
+We'll run sqlmap on this request
 
+command:```sqlmap -r req1.txt --dbs```
 
-
-
-
-
-
-
-
+`10`
 
 
 

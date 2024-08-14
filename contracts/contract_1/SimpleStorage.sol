@@ -11,7 +11,7 @@ contract SimpleStorage{
    
     // creating a new type "Person"     
     struct Person{    
-        uint256 favoriteNumber;    
+        uint256 favoriteNumber;     
         string name;  
     }   
   

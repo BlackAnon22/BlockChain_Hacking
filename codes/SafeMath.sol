@@ -11,7 +11,7 @@ contract SafeMathTester {
 
     // 255 is the biggest number that can be fit in a uint8
     uint8 public bigNumber = 255; // unchecked
-    function add() public {
+    function add() public { 
         bigNumber = bigNumber + 1; // this works for solidity versions before 0.8.0
     } 
 }

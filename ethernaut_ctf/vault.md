@@ -46,11 +46,25 @@ contract Vault {
 - Simple variables like `bool`, `uint`, and `address` are usually assigned one slot each.
 - Complex types like structs and mappings require understanding of their internal storage structure.
 
+Lets start out by checking the contract address and contract abi
 
+![image](https://github.com/user-attachments/assets/59c88270-9e0c-4058-adbc-0928f41fc7f9)
 
+Now, we can try to read the password variable using foundry cast since we know the slot already to be `1`
 
+![image](https://github.com/user-attachments/assets/b070f7f3-d6ff-4f62-8d97-0485a3e3ed16)
 
+We got the password hehe, we can convert this to ascii using foundry cast
 
+![image](https://github.com/user-attachments/assets/d96f2885-2d8a-4bb8-b4a8-5b4070ef9138)
+
+Niceeeeeeeeeee, with this we can unlock this vault, but then before we unlock lets check the state of the lock
+
+![image](https://github.com/user-attachments/assets/9245022b-b0b7-4142-9f0b-b4b992016de8)
+
+The current state of the lock is 'true'
+
+Lets unlock
 
 
 

@@ -36,6 +36,45 @@ To learn more about slots, you can check [this](https://medium.com/@ozorawachie/
 To get the slots in our contract
 
 
+```sol
+contract Vault {
+    bool public locked;      // slot 0
+    bytes32 private password; // slot 1
+}
+```
+
+- Simple variables like `bool`, `uint`, and `address` are usually assigned one slot each.
+- Complex types like structs and mappings require understanding of their internal storage structure.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

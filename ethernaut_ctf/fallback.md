@@ -46,3 +46,45 @@ contract Fallback {
 ```
 <hr>
 
+Let me explain what this contract does
+
+```
+This Solidity contract, Fallback, handles contributions and dynamic ownership transfer:
+
+State Variables:
+
+contributions: Tracks the ether contributed by each address.
+owner: Holds the address of the current contract owner.
+
+Constructor:
+
+Initializes the contract with the deployer as the owner and sets their contribution to 1000 ether.
+
+Functions:
+
+contribute: Users can contribute less than 0.001 ether. If their total contribution surpasses the owner's, they become the new owner.
+getContribution: Returns the calling user's contribution.
+withdraw: Allows the current owner to withdraw all contract funds.
+receive: Allows ether to be sent to the contract and transfers ownership if the sender has a contribution.
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

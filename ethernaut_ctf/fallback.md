@@ -67,6 +67,10 @@ function contribute() public payable {
     }
 ```
 
+The `receive()` function changes the owner of the contract to the `msg.sender(i.e the person that calls the contract)`, but then the requirement is that `msg.value` has to be greater than 0, also the `contributions[msg.sender]` (i.e the contribution is greater than 1) then we become the owner of the contract
+
+The `contribute()` function is a payable function and it has a require statement, so if the `msg.value < 0.001 ether` it executes the next code. We can use this to check our contributions
+ 
 
 
 

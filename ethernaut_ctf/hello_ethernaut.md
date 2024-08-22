@@ -1,10 +1,12 @@
 # Task
 
 The task here is to look into the level's info method `contract.info()` or `await contract.info()`
+<hr>
 
 # Contract
 
 There's no contract code
+<hr>
 
 
 First lets check the contract's address and abi

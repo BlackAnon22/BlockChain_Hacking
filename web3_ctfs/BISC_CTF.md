@@ -83,12 +83,15 @@ What we'll do is access the private variable
 
 ![image](https://github.com/user-attachments/assets/0e00ff35-b269-4829-bbaa-1e9c407c63e9)
 
-We got that
+We got that hex value
 
+The value `0x000000000000000000000000000000000000000000000000000000000000005f` translates to the length of the string stored in the smart contract. The value `0x5f` in hexadecimal is equivalent to `95` in decimal, this indicates that the string stored is 95 bytes long. Since the string is longer than 31 bytes, Solidity stores the actual string data in a different storage slot. The slot where the data begins is determined by hashing the slot number using `keccak256`.
 
+What we'll do now is calculate the hash of the slot number 1 to find out where the string data starts.
 
+![image](https://github.com/user-attachments/assets/e3aa5219-1b79-4aa6-b628-36ca707d349e)
 
-
+Now that we have the computed hash
 
 
 

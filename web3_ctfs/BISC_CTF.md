@@ -71,6 +71,9 @@ contract Safe {
 - Simple variables like `bool`, `uint`, and `address` are usually assigned one slot each.
 - Complex types like `structs` and `mappings` require understanding of their internal storage structure.
 
+Now that we've determined the slots, we can start out by checking the owner of the contract I'll be using foundry cast for this
+
+
 
 
 

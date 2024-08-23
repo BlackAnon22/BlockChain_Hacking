@@ -55,10 +55,21 @@ We definitely can't get it using the `opensafe()` function because we aren't the
 
 Since we have the contract address we can check the owner of the contract, bue then before we move on we have to understand how storage and slots works in blockchain
 
+The flag is saved in a private variable. But then despite this being private we can still access everything in a smart contract
+
+So to find the flag we need to get the slot of the variable we want to read.
+
 To learn more about storage and slots, you can check [this](https://medium.com/@ozorawachie/solidity-storage-layout-and-slots-a-comprehensive-guide-2cee71817ed8)
 
+To get the slots in our contract
 
-
+```sol
+contract Safe {
+    address public owner; // slot 0
+    string private flag =  "bisc2023{FAKE_FLAG}"; //this data can be viewed on chain // slot 1
+```
+- Simple variables like `bool`, `uint`, and `address` are usually assigned one slot each.
+- Complex types like `structs` and `mappings` require understanding of their internal storage structure.
 
 
 

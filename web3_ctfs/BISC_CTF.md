@@ -36,6 +36,13 @@ contract Safe {
 ```
 Let me explain what this contract does
  
+The contract defines a simple smart contract called `Safe` with two main functions: `opensafe()` and `changeOwner()`.
+
+- The constructor is a special function that runs once when the contract is deployed to the blockchain. The deployer of the contract becomes the owner, which is stored in the `owner` variable.
+
+- The `opensafe()` function is a public view function that returns a string. If the caller of this function is the current owner of the contract (i.e., the address stored in `owner`), the function will return the `flag` string. If the caller is not the owner, it returns the string "Your not owner!!".
+
+- The `changeOwner()` function allows the current owner to transfer ownership of the contract to a new address. It takes an address as an argument and checks if the caller is the current owner using a `require` statement. If the caller is the owner, the ownership is transferred to the new address; otherwise, the function reverts with the message "Your not owner!!".
 
 
 

@@ -4,6 +4,10 @@
 
 The task here is to get the flag
 
+## Contract Address
+
+0x5e992854Bd912ae170b7b5b8a64323e4e5E0feAF
+
 
 ## Contract
 
@@ -45,7 +49,11 @@ The contract defines a simple smart contract called `Safe` with two main functio
 - The `changeOwner()` function allows the current owner to transfer ownership of the contract to a new address. It takes an address as an argument and checks if the caller is the current owner using a `require` statement. If the caller is the owner, the ownership is transferred to the new address; otherwise, the function reverts with the message "Your not owner!!".
 
 
+The question now is, how can we get the flag??
 
+We definitely can't get it using the `opensafe()` function because we aren't the owner of the contract
+
+Since we have the contract address we can check the owner of the contract
 
 
 

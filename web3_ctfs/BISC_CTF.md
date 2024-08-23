@@ -101,7 +101,9 @@ We got that hex value, lets convert to ascii
 
 We found half the flag
 
-To get the other parts of the flag we'll check the next slot, so instead of using the hash ```0xb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6``` we'll add ```1``` to it, which will be ```0xb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf7```
+To get the other parts of the flag we'll check the next slot, so instead of using the hash ```0xb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6``` we'll add ```1``` to it, which gives us ```0xb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf7```
+
+Lets check what data is stored there
 
 ![image](https://github.com/user-attachments/assets/0d2ebcbe-ec4b-49ef-8862-3bc83425074a)
 

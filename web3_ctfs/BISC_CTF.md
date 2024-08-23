@@ -73,7 +73,17 @@ contract Safe {
 
 Now that we've determined the slots, we can start out by checking the owner of the contract I'll be using foundry cast for this
 
+![image](https://github.com/user-attachments/assets/2e1d711d-5553-4f39-b7ef-ad792ccdeddc)
 
+That's the current owner of the contract
+
+We can't be the owner of the contract so we won't be going through that route
+
+What we'll do is access the private variable
+
+![image](https://github.com/user-attachments/assets/0e00ff35-b269-4829-bbaa-1e9c407c63e9)
+
+We got that
 
 
 

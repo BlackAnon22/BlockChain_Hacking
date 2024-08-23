@@ -91,7 +91,21 @@ What we'll do now is calculate the hash of the slot number 1 to find out where t
 
 ![image](https://github.com/user-attachments/assets/e3aa5219-1b79-4aa6-b628-36ca707d349e)
 
-Now that we have the computed hash
+Now that we have the computed hash, we can check the actual data stored there
+
+![image](https://github.com/user-attachments/assets/add4118d-07d0-41c8-a875-2a30d6a49348)
+
+We got that hex value, lets convert to ascii
+
+![image](https://github.com/user-attachments/assets/72fb24ae-8a45-4f6d-aa72-ef5e8963a60b)
+
+We found our flag
+
+FLAG:-```bisc2023{W0w_f0und_The_6aCk_do0r}```
+
+-------------------------------
+
+Till next time :xD
 
 
 

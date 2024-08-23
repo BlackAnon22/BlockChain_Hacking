@@ -99,9 +99,19 @@ We got that hex value, lets convert to ascii
 
 ![image](https://github.com/user-attachments/assets/72fb24ae-8a45-4f6d-aa72-ef5e8963a60b)
 
-We found our flag
+We found half the flag
 
-FLAG:-```bisc2023{W0w_f0und_The_6aCk_do0r}```
+To get the other parts of the flag we'll check the next slot, so instead of using the hash ```0xb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6``` we'll add ```1``` to it, which will be ```0xb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf7```
+
+![image](https://github.com/user-attachments/assets/0d2ebcbe-ec4b-49ef-8862-3bc83425074a)
+
+We got a hex value, lets convert to ascii
+
+![image](https://github.com/user-attachments/assets/e81edb74-3a54-4d99-85cd-3264803fb999)
+
+Found the last part of the flag😎
+
+FLAG:-```bisc2023{W0w_f0und_The_6aCk_do0r_t0_th3_5af3!!}```
 
 -------------------------------
 

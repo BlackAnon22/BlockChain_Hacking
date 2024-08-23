@@ -1,5 +1,9 @@
 # Challenge Name: Safe Challenge
 
+## Task
+
+The task here is to get the flag
+
 
 ## Contract
 
@@ -30,3 +34,29 @@ contract Safe {
     }
 }
 ```
+Let me explain what this contract does
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

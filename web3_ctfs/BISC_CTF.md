@@ -53,7 +53,9 @@ The question now is, how can we get the flag??
 
 We definitely can't get it using the `opensafe()` function because we aren't the owner of the contract
 
-Since we have the contract address we can check the owner of the contract, bue then before we move on we have to understand how storage works in blockchain
+Since we have the contract address we can check the owner of the contract, bue then before we move on we have to understand how storage and slots works in blockchain
+
+To learn more about storage and slots, you can check [this](https://medium.com/@ozorawachie/solidity-storage-layout-and-slots-a-comprehensive-guide-2cee71817ed8)
 
 
 

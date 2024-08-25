@@ -38,3 +38,16 @@ contract CoinFlip {
     }
 }
 ```
+What does this contract do?
+
+The `CoinFlip` contract is a game where users guess the outcome of a coin flip based on the hash of the previous block. If the guess is correct, the `consecutiveWins` counter increases; otherwise, it resets to zero. The contract ensures fairness by preventing the same block hash from being used twice in a row.
+
+
+
+
+
+
+
+
+
+

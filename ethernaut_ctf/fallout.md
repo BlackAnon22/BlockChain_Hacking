@@ -49,8 +49,16 @@ What does this contract do??
 
 The `Fallout` contract manages ether allocations. Users can send ether to the contract using the `allocate` function, which stores the amount in a mapping tied to their address. The `sendAllocation` function allows anyone to transfer allocated ether to a specified address. The owner, who is set upon contract deployment, can withdraw all funds using the `collectAllocations` function. The contract also provides a function to check the allocated balance of any address.
 
+We are interested in this part of the contract
 
-
+```sol
+ /* constructor */
+    function Fal1out() public payable {
+        owner = msg.sender;
+        allocations[owner] = msg.value;
+    }
+```
+A constructor gets executed when the contract gets deployed, so whoever deployes the contract automatically becomes the owner. There's an error in the contract above that'll allow us claim ownership
 
 
 

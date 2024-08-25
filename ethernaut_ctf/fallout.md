@@ -58,8 +58,17 @@ We are interested in this part of the contract
         allocations[owner] = msg.value;
     }
 ```
-A constructor gets executed when the contract gets deployed, so whoever deployes the contract automatically becomes the owner. There's an error in the contract above that'll allow us claim ownership
+A constructor gets executed when the contract gets deployed, so whoever deployes the contract automatically becomes the owner. There's an error in the contract above that'll allow us claim ownership of the contract. If you check the function we have `fal1out` instead of `fallout`, this means it is not a constructor but a public function that anybody can execute and we can see that whoever executes the function becomes the owner
 
+Lets start out by checking the contract address and contract abi
+
+![image](https://github.com/user-attachments/assets/ed80db5a-fc8a-4605-918c-20cd52e8c378)
+
+From the explanation, we've seen that the security flaw is in the `Fal1out` function
+
+If the function is intended to be a fallback function or constructor, having it publicly accessible and setting `owner` to `msg.sender` each time it is called poses a security risk. Any user can call this function and become the owner, which is generally undesirable.
+
+Lets check the current owner of the contract
 
 
 

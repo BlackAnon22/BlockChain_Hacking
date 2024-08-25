@@ -70,7 +70,27 @@ If the function is intended to be a fallback function or constructor, having it 
 
 Lets check the current owner of the contract
 
+![image](https://github.com/user-attachments/assets/933b0b6e-13b9-43b3-8252-65c53819ee92)
 
+You can see that we aren't the current owner of the contract
+
+Lets claim ownership by calling the `Fal1out` function
+
+![image](https://github.com/user-attachments/assets/5fa54c0d-02da-414e-bace-aa480d0ef071)
+
+Now lets recheck the owner of the contract
+
+![image](https://github.com/user-attachments/assets/2d05272d-10dc-40a9-9006-eeb5960870f2)
+
+Niceeeeee, we became the owner
+
+We can go ahead to submit the instance
+
+![image](https://github.com/user-attachments/assets/48eb169d-6d72-402e-a864-b944c162ee76)
+
+-----------------------------
+
+Till Next Time :xD
 
 
 

@@ -26,3 +26,10 @@ contract Elevator {
     }
 }
 ```
+
+Lets get the contract address and contract abi
+
+![image](https://github.com/user-attachments/assets/516d6c35-6444-48f6-aaa2-42618867c170)
+
+We'll start out by using cast to check the state of the elevator
+

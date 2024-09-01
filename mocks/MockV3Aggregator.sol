@@ -20,7 +20,7 @@ contract HelperConfig is Script {
 
     struct NetworkConfig {
         address priceFeed; // ETH/USD price feed address
-    }
+    } 
 
     constructor() {
         if (block.chainid == 11155111) { 

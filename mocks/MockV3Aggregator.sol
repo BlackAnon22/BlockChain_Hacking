@@ -6,7 +6,7 @@
 
 pragma solidity ^0.8.19;    
  
-import {Script} from "forge-std/Script.sol";   
+import {Script} from "forge-std/Script.sol";    
 import {MockV3Aggregator} from "../test/mocks/MockV3Aggregator.sol";  
         
 contract HelperConfig is Script {  

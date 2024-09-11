@@ -13,7 +13,7 @@ contract HelperConfig is Script {
     // If we are on a local anvil chain, deploy mocks      
     // Otherwise, grab the existing address from the live network 
       
-    NetworkConfig public activeNetworkConfig;
+    NetworkConfig public activeNetworkConfig; 
      
     uint8 public constant DECIMALS = 8; 
     int256 public constant INITIAL_PRICE = 2000e8;  

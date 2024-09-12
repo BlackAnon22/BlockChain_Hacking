@@ -12,7 +12,7 @@ contract voteCharacters {
     struct Person {
         string favoriteAnimeCharacter; 
         string name;
-    }
+    } 
  
     // dynamic array of Person
     Person[] public listOfPeople;

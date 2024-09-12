@@ -8,7 +8,7 @@ pragma solidity ^0.8.0;
 
 contract voteCharacters {
     string public animeCharacter;
-
+ 
     struct Person {
         string favoriteAnimeCharacter; 
         string name;

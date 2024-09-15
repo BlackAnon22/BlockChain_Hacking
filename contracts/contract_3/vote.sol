@@ -10,7 +10,7 @@ contract voteCharacters {
     string public animeCharacter; 
  
     struct Person {
-        string favoriteAnimeCharacter; 
+        string favoriteAnimeCharacter;  
         string name; 
     }  
  

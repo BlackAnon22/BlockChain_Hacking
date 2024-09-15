@@ -15,7 +15,7 @@ contract voteCharacters {
     }  
  
     // dynamic array of Person
-    Person[] public listOfPeople;
+    Person[] public listOfPeople; 
 
     mapping(string => string) public nameToFavoriteAnimeCharacter;
 

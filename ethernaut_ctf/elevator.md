@@ -78,7 +78,9 @@ Lets deploy this attack contract with forge
 
 Now that we've successfully deployed this, lets interact with the functions
 
-We'll start by setting the floor 
+We'll start by setting the top to say "floor 20" 
+
+![image](https://github.com/user-attachments/assets/61aa3195-57ba-409d-a65b-90c9475a6a52)
 
 
 

@@ -26,6 +26,7 @@ contract Elevator {
     }
 }
 ```
+This Solidity contract simulates an elevator system with two main components: `Building` and `Elevator`. The `Elevator` contract has a `goTo` function that takes a floor number and interacts with a `Building` contract (the caller). It first checks if the floor is the last floor using the `isLastFloor` function from the `Building` contract. If it's not the last floor, it updates the current floor and checks again to determine if the elevator is at the top floor. The `top` variable reflects whether the elevator has reached the top floor.
 
 Lets get the contract address and contract abi
 

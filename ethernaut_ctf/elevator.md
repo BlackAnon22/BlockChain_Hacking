@@ -33,3 +33,21 @@ Lets get the contract address and contract abi
 
 We'll start out by using cast to check the state of the elevator
 
+![image](https://github.com/user-attachments/assets/fb8e9fdf-ab41-4ed3-ad3e-f26a50dcd251)
+
+We get the "false" response, this means we aren't at the top of the building yet
+
+Lets check the floor we are at
+
+
+
+
+
+
+
+
+
+
+
+
+

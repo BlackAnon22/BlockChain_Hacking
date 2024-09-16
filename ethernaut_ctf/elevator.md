@@ -74,7 +74,7 @@ contract elevatorAttack {
 
 Lets deploy this attack contract with forge
 
-![image](https://github.com/user-attachments/assets/5aeac32f-0e2c-406f-abbe-75fdd5d767c9)
+![image](https://github.com/user-attachments/assets/65925b13-aaa0-44a1-bbfa-82150462beb8)
 
 Now that we've successfully deployed this, lets interact with the functions
 

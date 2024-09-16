@@ -65,7 +65,7 @@ contract elevatorAttack {
         return toggle;
    }
 
-    function setFloor(uint _floor) public {
+    function setTop(uint _floor) public {
         target.goTo(_floor);
     }
 }

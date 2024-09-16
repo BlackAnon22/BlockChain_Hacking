@@ -82,6 +82,14 @@ We'll start by setting the top to say "floor 20"
 
 ![image](https://github.com/user-attachments/assets/61aa3195-57ba-409d-a65b-90c9475a6a52)
 
+Nicee, our transaction got successful
+
+Now, lets check the floor again
+
+![image](https://github.com/user-attachments/assets/c5b0cedd-c783-4f62-b0e3-91427dd2b15e)
+
+Good, we can now go ahead to check if we are at the top of the elevator or not
+
 
 
 

@@ -90,6 +90,13 @@ Now, lets check the floor again
 
 Good, we can now go ahead to check if we are at the top of the elevator or not
 
+![image](https://github.com/user-attachments/assets/e116090a-dc35-45a4-8e9f-904159927b57)
+
+We got the "true" output, which means we have successfully reached the top of the building
+
+You can go ahead to submit the instance
+
+![image](https://github.com/user-attachments/assets/54e745ce-906d-488e-8902-2e78cc499218)
 
 
 

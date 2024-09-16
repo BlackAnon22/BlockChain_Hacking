@@ -73,10 +73,10 @@ contract elevatorAttack {
 ```
 what does this attack contract do??
 
-1. It imports the Elevator contract and sets it as the target during construction (constructor).
-2. The isLastFloor function alternates (toggles) between returning true and false on each call.
-3. By alternating the isLastFloor return value, the goTo function in the Elevator contract can be tricked into thinking it hasn’t reached the top floor, even when it has, due to the changing return value.
-4. The setTop function is used to call the goTo function in the Elevator contract, exploiting this behavior to bypass the condition and manipulate the elevator's top status.
+1. It imports the `Elevator` contract and sets it as the target during construction (constructor).
+2. The `isLastFloor` function alternates (toggles) between returning true and false on each call.
+3. By alternating the `isLastFloor` return value, the `goTo` function in the `Elevato`r contract can be tricked into thinking it hasn’t reached the top floor, even when it has, due to the changing return value.
+4. The `setTop` function is used to call the `goTo` function in the `Elevator` contract, exploiting this behavior to bypass the condition and manipulate the elevator's top status.
 
 
 Lets deploy this attack contract with forge

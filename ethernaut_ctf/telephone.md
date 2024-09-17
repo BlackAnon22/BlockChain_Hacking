@@ -62,6 +62,7 @@ Lets deploy this using forge
 Since ownership can be transferred if `tx.origin != msg.sender` we can call the `hackContract` function and pass in our address
 
 
+![image](https://github.com/user-attachments/assets/94f13cec-4814-49dd-a905-0cf83deb3009)
 
 
 

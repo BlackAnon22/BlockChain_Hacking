@@ -32,3 +32,5 @@ First, lets check the owner of this contract
 ![image](https://github.com/user-attachments/assets/bf95721a-fc87-400a-9d1a-ed3cce80fe07)
 
 That's the current owner of the contract
+
+Since ownership can be transferred if `tx.origin != msg.sender` we can call the `changeOwner` function and pass in our address

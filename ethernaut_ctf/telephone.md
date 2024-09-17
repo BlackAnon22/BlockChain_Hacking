@@ -33,8 +33,6 @@ First, lets check the owner of this contract
 
 That's the current owner of the contract
 
-Since ownership can be transferred if `tx.origin != msg.sender` we can call the `changeOwner` function and pass in our address
-
 Below is the solve contract
 
 ```sol
@@ -60,6 +58,9 @@ contract TelephoneHack {
 Lets deploy this using forge
 
 ![image](https://github.com/user-attachments/assets/dc86328b-fcde-4684-8c09-888cfb04a179)
+
+Since ownership can be transferred if `tx.origin != msg.sender` we can call the `hackContract` function and pass in our address
+
 
 
 

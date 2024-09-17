@@ -64,8 +64,13 @@ Since ownership can be transferred if `tx.origin != msg.sender` we can call the 
 
 ![image](https://github.com/user-attachments/assets/94f13cec-4814-49dd-a905-0cf83deb3009)
 
+Checking the owner of the contract again
 
+![image](https://github.com/user-attachments/assets/f7be04f3-be92-4371-b83a-bcde020e9291)
 
+We already became the owner of the contract
+
+You can go ahead to submit the instance
 
 
 

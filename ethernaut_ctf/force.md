@@ -56,9 +56,21 @@ We can deploy the attack contract using forge by passing the contract address an
 
 ![image](https://github.com/user-attachments/assets/c3aa926e-b47d-4952-be33-43cec88e222c)
 
+Checking the balance again,
 
+![image](https://github.com/user-attachments/assets/1e174b87-2d69-4ed7-9203-af2698fbeb93)
 
+The balance of the contract is no longer zero
 
+Submitting the instance
+
+![image](https://github.com/user-attachments/assets/b48010ec-8671-4260-bc2c-424b60db04f6)
+
+We have successfully completed this level
+
+--------------------------------
+
+Till Next Time :xD
 
 
 

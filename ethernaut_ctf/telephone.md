@@ -26,3 +26,9 @@ contract Telephone {
 Lets get the contract address and contract abi
 
 ![image](https://github.com/user-attachments/assets/c1fe8f04-847f-4879-8277-ad1196e20e8d)
+
+First, lets check the owner of this contract
+
+![image](https://github.com/user-attachments/assets/bf95721a-fc87-400a-9d1a-ed3cce80fe07)
+
+That's the current owner of the contract

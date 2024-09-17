@@ -22,3 +22,7 @@ contract Telephone {
     }
 }
 ```
+
+Lets get the contract address and contract abi
+
+![image](https://github.com/user-attachments/assets/c1fe8f04-847f-4879-8277-ad1196e20e8d)

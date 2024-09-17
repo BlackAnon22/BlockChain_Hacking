@@ -33,7 +33,7 @@ Below is our attack contract
 
 pragma solidity ^0.8.19;
 
-contract drawFunds {
+contract sendFunds {
 
     constructor(address payable _owner) payable {
         require(msg.value > 0, "Not enough");
@@ -42,7 +42,7 @@ contract drawFunds {
 
 }
 ```
-The `drawFunds` contract transfers Ether to a specified address upon deployment and then self-destructs, ensuring the funds are sent and the contract is destroyed.
+The `sendFunds` contract transfers Ether to a specified address upon deployment and then self-destructs, ensuring the funds are sent and the contract is destroyed.
 
 Lets get the contract address
 
@@ -52,7 +52,9 @@ Before we deploy the attack contract, we can check the balance of the contract
 
 ![image](https://github.com/user-attachments/assets/33e45c81-ead7-4ab1-8be7-30fb9f7b6fff)
 
-We can deploy the attack contract using forge by passing the contract address and a value of 1 wei
+We can deploy the attack contract using forge by passing the contract address
+
+
 
 
 

@@ -62,6 +62,8 @@ contract TelephoneHack {
     
 }
 ```
+This attack contract exploits the Telephone contract's ownership change condition. It calls `changeOwner` through a contract (instead of directly), which tricks the `Telephone contract` into satisfying the `tx.origin != msg.sender` check, allowing ownership to be transferred to the specified address.
+
 Lets deploy this using forge
 
 ![image](https://github.com/user-attachments/assets/1a28c0f3-036d-4412-ae4d-fcb43f5121ba)

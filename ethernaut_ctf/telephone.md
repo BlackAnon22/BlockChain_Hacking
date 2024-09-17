@@ -22,6 +22,13 @@ contract Telephone {
     }
 }
 ```
+What does this contract do??
+
+1. The `owner` variable stores the address of the current owner, initially set to the address that deployed the contract (msg.sender in the constructor).
+
+2. The `changeOwner` function can be called by anyone, but the ownership will only be transferred if `tx.origin` (the original external account initiating the transaction) is different from `msg.sender` (the immediate caller of the function).
+
+Now, this restriction prevents a direct call from changing ownership because I tried to change  ownership directly using cast but then it didn't work; it requires a contract or intermediary to call the function on behalf of the original sender. 
 
 Lets get the contract address and contract abi
 

@@ -54,6 +54,7 @@ Before we deploy the attack contract, we can check the balance of the contract
 
 We can deploy the attack contract using forge by passing the contract address
 
+![image](https://github.com/user-attachments/assets/c3aa926e-b47d-4952-be33-43cec88e222c)
 
 
 

@@ -41,7 +41,7 @@ function transfer(address _to, uint256 _value) public returns (bool) {
         balances[_to] += _value;
         return true;
 ```
-This is a known vulnerability in solidity because the balances takes the mapping of an address to a uint256 and uint256 ranges from 0 to 2^256 -1. So, that `require` statement will always be true because a uint256 will always be greater than 0. Even if we specify an amount that ends up being a negative value the statement will always be true
+This is a known vulnerability in solidity because the balances takes the mapping of an address to a uint256 and uint256 ranges from `0 to 2^256 - 1`. So, that `require` statement will always be true because a uint256 will always be greater than 0. Even if we specify an amount that ends up being a negative value the statement will always be true
 
 ```sol
 balances[msg.sender] -= _value;

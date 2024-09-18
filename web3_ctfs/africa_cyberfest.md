@@ -37,3 +37,30 @@ contract Haxor {
         return userBalances[_user];
     }
 ```
+
+Lets start out by getting my balance
+
+![image](https://github.com/user-attachments/assets/c23e017b-8a1f-4bda-b086-0c967176d343)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

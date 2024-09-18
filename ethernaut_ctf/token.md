@@ -52,9 +52,35 @@ Lets get the contract address and contract abi
 
 ![image](https://github.com/user-attachments/assets/fd9053eb-7222-4a48-be00-18676a6242be)
 
-We were given 20 tokens, lets confrim this
+Niceeeeee,
 
 ![image](https://github.com/user-attachments/assets/59ab2372-2ccf-44d6-b36b-4dabf6dbf700)
+
+That's my balance right there, I have 20 tokens, so to beat this challenge we have to increase that number of tokens
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

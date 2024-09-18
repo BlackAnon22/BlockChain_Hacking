@@ -60,6 +60,11 @@ That's my balance right there, I have 20 tokens, so to beat this challenge we ha
 
 ![image](https://github.com/user-attachments/assets/11d77409-d698-4c81-84bb-171d79490ec3)
 
+So, specify the contract address and then the value (which in our case is 21), so it's safe to say when this code gets executed
+
+```sol
+balances[msg.sender] -= _value;
+```
 
 
 

@@ -58,6 +58,7 @@ Niceeeeee,
 
 That's my balance right there, I have 20 tokens, so to beat this challenge we have to increase that number of tokens
 
+![image](https://github.com/user-attachments/assets/11d77409-d698-4c81-84bb-171d79490ec3)
 
 
 

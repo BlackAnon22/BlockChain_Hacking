@@ -74,6 +74,7 @@ We'll have something like this
 
 Now, because we are using uint256 which doesn't take a negative value, this actually underflows
 
+![image](https://github.com/user-attachments/assets/05a2d852-26e8-4c56-9f03-a980956b3e54)
 
 
 

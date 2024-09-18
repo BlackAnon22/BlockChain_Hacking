@@ -29,6 +29,7 @@ contract Token {
     }
 }
 ```
+The `Token` contract manages token balances. It initializes with a total supply assigned to the deployer and allows users to transfer tokens using the `transfer` function. It updates balances and ensures the sender has enough tokens before transferring. The `balanceOf` function returns the token balance of any address.
 
 This level shows how to abuse arithmetic overflow and underflows
 

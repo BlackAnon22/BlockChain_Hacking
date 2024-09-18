@@ -29,3 +29,8 @@ contract Token {
     }
 }
 ```
+
+Lets get the contract address and contract abi
+
+![image](https://github.com/user-attachments/assets/fd9053eb-7222-4a48-be00-18676a6242be)
+

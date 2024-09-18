@@ -66,6 +66,14 @@ So, specify the contract address and then the value (which in our case is 21), s
 balances[msg.sender] -= _value;
 ```
 
+We'll have something like this
+
+```sol
+20 - 21 which equals -1
+```
+
+Now, because we are using uint256 which doesn't take a negative value, this actually underflows
+
 
 
 

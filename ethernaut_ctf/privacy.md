@@ -47,6 +47,9 @@ Now that we have the contract address lets check the state of the lock by callin
 
 So to complete this level, the state of this lock should return "false"
 
+Before we move on we have to understand how storage works, to know more about storage and slots you can check this [article](https://medium.com/@ozorawachie/solidity-storage-layout-and-slots-a-comprehensive-guide-2cee71817ed8).
+
+![image](https://github.com/user-attachments/assets/77cb09a6-44ca-44a2-82bf-35a34739d000)
 
 
 

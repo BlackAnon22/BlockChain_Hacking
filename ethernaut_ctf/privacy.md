@@ -82,6 +82,10 @@ Before we move on we have to understand how storage works, to know more about st
 
 ![image](https://github.com/user-attachments/assets/9917f89d-4b7b-4c0f-9095-3ed7146bd02d)
 
+why does the variable `flattening`, `denomination` and `awkwardness` occupy slot 2??
+
+State variables of contracts are stored in storage in a compact way such that multiple values sometimes use the same storage slot. A storage slot can store exactly 32 bytes (or 256 bits) and if a value type does not fit the remaining part of a storage slot, it is stored in the next storage slot.
+
 Why does `bytes32` occupy slot 3-5??
 
 Well, this is because `bytes32[3] private data;` holds three `bytes32` values.

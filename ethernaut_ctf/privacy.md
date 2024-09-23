@@ -55,6 +55,20 @@ contract Privacy {
     data = _data;
 }
 ```
+- The constructor initializes the `data` array with the values passed to it during deployment.
+
+3. **Unlock Function:**
+```sol
+function unlock(bytes16 _key) public {
+    require(_key == bytes16(data[2]));
+    locked = false;
+}
+```
+- The `unlock` function takes a `bytes16` key as input.
+- It checks if the passed key matches the first 16 bytes of the third element (`data[2]`) in the `data` array.
+- If the condition is true, it sets `locked` to `false`, effectively unlocking the contract.
+
+
 
 Lets grab the contract address and contract abi
 

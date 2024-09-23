@@ -92,8 +92,25 @@ Well, this is because `bytes32[3] private data;` holds three `bytes32` values.
 
 ![image](https://github.com/user-attachments/assets/4694b10d-061a-4e0b-a1a9-44708ddd2c3e)
 
+The next thing to do will be to grab the data that is being stored in `data[2]` as this is the key that'll help us unlock the contract. We can do this using foundry cast
 
+![image](https://github.com/user-attachments/assets/bc1242e2-9764-4fc7-aec2-4a426ffdbf34)
 
+That's the actual data that is being stored in that slot which is the key, but then it's in `bytes32`. To unlock the contract we need to pass in a `bytes16` key, so what we need to do is to extract the first 16 bytes of the value. We can do this using bash
+
+We'll store the `bytes32` value in a variable
+
+![image](https://github.com/user-attachments/assets/72548139-e538-495a-8c0f-2d2e7e4a9f94)
+
+Then we extract the first 16 bytes
+
+![image](https://github.com/user-attachments/assets/e59cb379-a753-4047-89d9-e2118532f8f7)
+
+Explanation:
+
+- `echo $data` outputs the value of the `data` variable.
+- `sed 's/0x//'` removes the `0x` prefix.
+- `s/.\{32\}$//` removes the last 32 characters (16 bytes) to keep the first 16 bytes.
 
 
 

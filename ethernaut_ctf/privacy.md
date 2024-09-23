@@ -38,8 +38,6 @@ contract Privacy {
 ```
 ## Breakdown of the contract
 
-### Breakdown of the Contract
-
 1. **State Variables:**
     
 - `bool public locked = true;`: This is a boolean variable that is initially set to `true`. The purpose of the contract is to unlock it by setting it to `false`.

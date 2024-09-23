@@ -42,12 +42,12 @@ contract Privacy {
 
 1. **State Variables:**
     
-    - `bool public locked = true;`: This is a boolean variable that is initially set to `true`. The purpose of the contract is to unlock it by setting it to `false`.
-    - `uint256 public ID = block.timestamp;`: This stores the timestamp of the block at the time of the contract's deployment.
-    - `uint8 private flattening = 10;`: A private unsigned integer with a value of `10`.
-    - `uint8 private denomination = 255;`: A private unsigned integer with the maximum value for an `uint8`.
-    - `uint16 private awkwardness = uint16(block.timestamp);`: This stores the current timestamp as a `uint16` integer.
-    - `bytes32[3] private data;`: This is a private array that holds three `bytes32` values.
+- `bool public locked = true;`: This is a boolean variable that is initially set to `true`. The purpose of the contract is to unlock it by setting it to `false`.
+- `uint256 public ID = block.timestamp;`: This stores the timestamp of the block at the time of the contract's deployment.
+- `uint8 private flattening = 10;`: A private unsigned integer with a value of `10`.
+- `uint8 private denomination = 255;`: A private unsigned integer with the maximum value for an `uint8`.
+- `uint16 private awkwardness = uint16(block.timestamp);`: This stores the current timestamp as a `uint16` integer.
+- `bytes32[3] private data;`: This is a private array that holds three `bytes32` values.
 
 2. **Constructor:**
  ```sol

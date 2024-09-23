@@ -114,9 +114,10 @@ Explanation:
 
 Now that we have the value in `bytes16` we can unlock this contract
 
-![image](https://github.com/user-attachments/assets/3756b584-4dc2-49b8-a17a-89a29179644e)
+![image](https://github.com/user-attachments/assets/a30f0146-cf8f-498a-ae7f-e05d1689522b)
 
 Checking the state of the lock again,
+
 
 
 

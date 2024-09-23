@@ -39,10 +39,13 @@ contract Privacy {
 
 Lets grab the contract address and contract abi
 
-![image](https://github.com/user-attachments/assets/8872dfba-5958-44b9-8c14-c7d07066a32e)
+![image](https://github.com/user-attachments/assets/9273b920-e316-4745-b046-b649f12187f4)
 
+Now that we have the contract address lets check the state of the lock by calling the "locked" function
 
+![image](https://github.com/user-attachments/assets/f138dad3-9f54-4f8d-bbd1-72b1c757d8bf)
 
+So to complete this level, the state of this lock should return "false"
 
 
 

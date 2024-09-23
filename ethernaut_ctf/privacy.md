@@ -112,8 +112,11 @@ Explanation:
 - `sed 's/0x//'` removes the `0x` prefix.
 - `s/.\{32\}$//` removes the last 32 characters (16 bytes) to keep the first 16 bytes.
 
+Now that we have the value in `bytes16` we can unlock this contract
 
+![image](https://github.com/user-attachments/assets/3756b584-4dc2-49b8-a17a-89a29179644e)
 
+Checking the state of the lock again,
 
 
 

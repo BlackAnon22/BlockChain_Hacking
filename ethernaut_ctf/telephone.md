@@ -2,7 +2,7 @@
 
 Claim ownership of the contract below to complete this level.
 
-# Contract
+# Contract 
  
 ```sol
 // SPDX-License-Identifier: MIT

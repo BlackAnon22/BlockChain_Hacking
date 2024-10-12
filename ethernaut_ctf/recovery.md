@@ -7,7 +7,7 @@ This level will be completed if you can recover (or remove) the 0.001 ether from
 
 # Contract
 
-```
+```sol
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 

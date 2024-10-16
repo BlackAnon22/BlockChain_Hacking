@@ -55,6 +55,8 @@ From the above screenshot, it's evident that the contract address we got is for 
 
 I got the contract address of the `SimpleToken` contract using [etherscan](https://sepolia.etherscan.io/)
 
+![image](https://github.com/user-attachments/assets/7b3e7da8-53ba-4eb0-a4b6-223a5071183f)
+![image](https://github.com/user-attachments/assets/1dbd128b-63ec-4070-a52e-7c5b8b868c83)
 
 
 

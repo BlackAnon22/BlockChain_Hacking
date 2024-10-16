@@ -46,6 +46,20 @@ contract SimpleToken {
     }
 }
 ```
+This Solidity code defines two smart contracts: `Recovery` and `SimpleToken`.
+
+1. Recovery Contract: It creates tokens by calling the generateToken function, which deploys a new instance of the SimpleToken contract, passing the token name, creator's address, and initial supply.
+
+1. SimpleToken Contract:
+
+Name: Holds the token's name.
+Balances: Maps addresses to their token balance.
+Constructor: Initializes the token by assigning the initial supply to the creator.
+Receive Function: Automatically assigns tokens when Ether is sent to the contract, giving 10 tokens per Ether.
+Transfer: Allows users to send tokens to another address.
+Destroy: This function destroys the contract and sends any remaining Ether to a specified address.
+
+This is a simple token system that allows the creation, transfer, and destruction of tokens while interacting with Ether.
 
 Lets get the contract address and contract abi
 

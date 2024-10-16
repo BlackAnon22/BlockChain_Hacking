@@ -46,3 +46,33 @@ contract SimpleToken {
     }
 }
 ```
+
+Lets get the contract address and contract abi
+
+![image](https://github.com/user-attachments/assets/8aa92366-829c-416e-b796-12157768b12b)
+
+From the above screenshot, it's evident that the contract address we got is for the `Recovery` contract. This means we'll have to look for the contract address of the contract `SimpleToken`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -63,7 +63,7 @@ These are the transactions that have gone through this contract
 
 ![image](https://github.com/user-attachments/assets/a7ab95a8-5074-46c3-82a0-8f315b901776)
 
-We got the contract that the `Recovery` contract generated which is the `SimpleToken` contract. We can also see that it has a balance of `0.01 ether`
+We got the contract that the `Recovery` contract generated which is the `SimpleToken` contract. We can also see that it has a balance of `0.01 ether`. So, we have the contract address of the `SimpleToken` to be `0x8490A4d3C00D4a6eDBe1694abb4407e60Da9871D`
 
 
 

@@ -69,6 +69,15 @@ Now that we have the contract address the next thing to do is to withdraw the `0
 
 ![image](https://github.com/user-attachments/assets/d8222dfc-1f0b-40c7-82fd-646e8509f52c)
 
+The transaction was a success, now lets check the contract balance again
+
+![image](https://github.com/user-attachments/assets/ea39e656-6140-4ca5-9d75-56029a69e5b7)
+
+We've successfully removed the 0.01 ether from the lost contract address
+
+Submitting the instance
+
+![image](https://github.com/user-attachments/assets/d9f2bee5-0908-4ccd-9ab8-094cdea054b0)
 
 
 

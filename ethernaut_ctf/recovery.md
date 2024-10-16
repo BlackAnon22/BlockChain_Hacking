@@ -59,6 +59,15 @@ I got the contract address of the `SimpleToken` contract using [etherscan](https
 ![image](https://github.com/user-attachments/assets/1dbd128b-63ec-4070-a52e-7c5b8b868c83)
 ![image](https://github.com/user-attachments/assets/f3675ddd-9957-46ee-90b3-c3df31335505)
 
+These are the transactions that have gone through this contract
+
+![image](https://github.com/user-attachments/assets/a7ab95a8-5074-46c3-82a0-8f315b901776)
+
+We got the contract that the `Recovery` contract generated which is the `SimpleToken` contract. We can also see that it has a balance of `0.01 ether`
+
+
+
+
 
 
 

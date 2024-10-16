@@ -65,6 +65,8 @@ These are the transactions that have gone through this contract
 
 We got the contract that the `Recovery` contract generated which is the `SimpleToken` contract. We can also see that it has a balance of `0.01 ether`. So, we have the contract address of the `SimpleToken` to be `0x8490A4d3C00D4a6eDBe1694abb4407e60Da9871D`
 
+Now that we have the contract address the next thing to do is to withdraw the `0.01 ether` present in the lost contract, to do this we'll have to call the `destroy` function and then pass in our address.
+
 
 
 

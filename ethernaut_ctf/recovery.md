@@ -67,6 +67,7 @@ We got the contract that the `Recovery` contract generated which is the `SimpleT
 
 Now that we have the contract address the next thing to do is to withdraw the `0.01 ether` present in the lost contract, to do this we'll have to call the `destroy` function and then pass in our address.
 
+![image](https://github.com/user-attachments/assets/d8222dfc-1f0b-40c7-82fd-646e8509f52c)
 
 
 

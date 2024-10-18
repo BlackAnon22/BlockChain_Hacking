@@ -29,6 +29,9 @@ contract Shop {
 
 ![image](https://github.com/user-attachments/assets/2dbd4a6e-c18f-44e0-ac06-ec1d7d4931a0)
 
+![image](https://github.com/user-attachments/assets/6b43c76e-91b9-4fb7-ae0a-e90af0b43c3c)
+
+
 
 
 

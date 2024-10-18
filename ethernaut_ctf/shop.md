@@ -70,7 +70,7 @@ We've successfully compiled the attack contract and we got the contract address 
 
 Lets start out by calling the `price()` function in the attack contract
 
-![image](https://github.com/user-attachments/assets/903e67ad-197a-4c88-b35c-f42dd68ea953)
+![image](https://github.com/user-attachments/assets/c9cc99f1-8ee7-4cfd-8898-3810f1d7b562)
 
 We have the value of `100`
 

@@ -27,6 +27,11 @@ contract Shop {
 }
 ```
 
+What we need to do is 
+
+1. set `isSold` to true
+2. set `price` < 100
+
 Below is the attack contract
 
 ```sol

@@ -64,8 +64,9 @@ contract shopAttack is Buyer{
 ```
 We can compile this using forge
 
+![image](https://github.com/user-attachments/assets/855d39bb-f7ed-4c31-8725-27afc906aa51)
 
-We've successfully compiled the attack contract and we got the contract address to be `0x5A6dD3c52df84Fea9c50f0c6ad9d56656EaA7abf`
+We've successfully compiled the attack contract and we got the contract address to be `0xb1b1d2b475d99c93d6D1c7AD1303B3C3a1BF134f`
 
 Lets start out by calling the `price()` function in the attack contract
 

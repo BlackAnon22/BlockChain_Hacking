@@ -86,7 +86,13 @@ Our price already reset to zero
 
 Submitting the instance
 
+![image](https://github.com/user-attachments/assets/9fb3c454-c19b-4662-9014-fd5990399aac)
 
+We have successfully completed this level
+
+-------------------------
+
+Till Next Time :xD
 
 
 

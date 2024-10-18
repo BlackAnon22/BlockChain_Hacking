@@ -74,7 +74,17 @@ Lets start out by calling the `price()` function in the attack contract
 
 We have the value of `100`
 
+To pass the if conditional statement, we'll call the `buy()` function
 
+![image](https://github.com/user-attachments/assets/059061ca-7da0-4004-9f70-565e56dcbaea)
+
+Now, lets call the `price()` function again
+
+![image](https://github.com/user-attachments/assets/17e15167-c75a-479b-91bf-b012223d9a4a)
+
+Our price already reset to zero
+
+Submitting the instance
 
 
 

@@ -27,6 +27,13 @@ contract Shop {
 }
 ```
 
+```sol
+if (_buyer.price() >= price && !isSold) {
+            isSold = true;
+            price = _buyer.price();
+        }
+```
+For the first condition to be true the first call to the `price()` function must satisfy the condition
 What we need to do is 
 
 1. set `isSold` to true

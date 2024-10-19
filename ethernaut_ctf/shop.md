@@ -40,7 +40,8 @@ if (_buyer.price() >= price && !isSold) {
             price = _buyer.price();
         }
 ```
-For the first condition to be true the first call to the `price()` function must satisfy the condition
+For the first condition to be true the first call to the `price()` function must be  `>= price`. However, on the second call it calls again and then sets the price
+
 What we need to do is 
 
 1. set `isSold` to true

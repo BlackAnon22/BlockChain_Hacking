@@ -103,7 +103,7 @@ Lets start out by calling the `price()` function in the attack contract
 
 We have the value of `100`
 
-To pass the if conditional statement, we'll call the `buy()` function
+To pass the conditional statement, we'll call the `buy()` function
 
 ![image](https://github.com/user-attachments/assets/059061ca-7da0-4004-9f70-565e56dcbaea)
 

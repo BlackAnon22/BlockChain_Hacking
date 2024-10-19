@@ -34,15 +34,17 @@ The contract, `Shop`, allows an external contract implementing the `Buyer` inter
 
 The contract is intended for interaction with a `Buyer` contract that returns a price.
 
+Let me explain the condition again
+
 ```sol
 if (_buyer.price() >= price && !isSold) {
             isSold = true;
             price = _buyer.price();
         }
 ```
-For the first condition to be true the first call to the `price()` function must be  `>= price`. However, on the second call it calls again and then sets the price
+For the first condition to evaluate as true, the initial call to the `price()` function must return a value greater than or equal to the current `price`. Afterward, the function is called again within the block, and the `price` is updated accordingly.
 
-What we need to do is 
+So summary of what we need to do is 
 
 1. set `isSold` to true
 2. set `price` < 100

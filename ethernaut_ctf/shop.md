@@ -84,7 +84,7 @@ contract shopAttack is Buyer{
 
 }
 ```
-Explainint this attack contract
+Explaining this attack contract
 
 - **`buyer`**: An instance of the `Shop` contract, passed in during deployment.
 - **`buy()`**: Calls the `buy()` function in the `Shop` contract.

@@ -26,6 +26,13 @@ contract Shop {
     }
 }
 ```
+The contract, `Shop`, allows an external contract implementing the `Buyer` interface to buy an item if the buyer's price meets or exceeds the item's price and the item is not already sold.
+
+- **`price`**: Initial price set to 100.
+- **`isSold`**: Tracks if the item is sold.
+- **`buy()` function**: Checks if the buyer's `price()` (from the external `Buyer` contract) is equal to or higher than the current price and if the item is not sold. If true, the item is marked as sold, and the price is updated to the buyer's price.
+
+The contract is intended for interaction with a `Buyer` contract that returns a price.
 
 ```sol
 if (_buyer.price() >= price && !isSold) {

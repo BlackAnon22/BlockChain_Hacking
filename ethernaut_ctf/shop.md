@@ -84,6 +84,13 @@ contract shopAttack is Buyer{
 
 }
 ```
+Explainint this attack contract
+
+- **`buyer`**: An instance of the `Shop` contract, passed in during deployment.
+- **`buy()`**: Calls the `buy()` function in the `Shop` contract.
+- **`price()`**: Overrides the `price()` function from the `Buyer` interface. It returns `100` before the item is sold and `0` after the item is sold. This allows it to pass the condition to buy the item by pretending to match the price (100), then once `isSold` is true, it returns `0` to finalize the transaction at a lower price.
+
+
 We can compile this using forge
 
 ![image](https://github.com/user-attachments/assets/855d39bb-f7ed-4c31-8725-27afc906aa51)

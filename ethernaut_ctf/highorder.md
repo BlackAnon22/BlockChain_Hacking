@@ -4,7 +4,7 @@ Imagine a world where the rules are meant to be broken, and only the cunning and
 
 Your objective is to become the Commander of the Higher Order! Good luck!
 
-# Contract
+# Contract 
  
 ```sol
 // SPDX-License-Identifier: MIT

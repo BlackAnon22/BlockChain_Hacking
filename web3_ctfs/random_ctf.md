@@ -65,6 +65,15 @@ contract Challenge {
     }
 }
 ```
+### Key Observations
+
+1. **Pause and Lock Mechanisms**: The function `exploit_me` requires `isPause` to be `false`. Additionally, the `lock` variable is set to `false` at the beginning of the function, which must be changed to `true` for the function to proceed, achieved through calling `lock_me`.
+    
+2. **Reentrancy Vulnerability**: `msg.sender.call("")` is an external call that allows reentrancy. In this case, you could call `lock_me` within a fallback function to set `lock` to `true`, enabling the rest of the function's execution.
+    
+3. **Unique Winner Condition**: The function ensures that only unique addresses are added as winners by checking if the name is empty in the `Names` mapping. This prevents duplicate entries.
+
+Since we've identified the vulnerability, lets cook our attack contract
 
 # Attack Contract
 

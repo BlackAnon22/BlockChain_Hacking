@@ -106,7 +106,18 @@ contract attackWinner {
 
 }
 ```
-Lets deploy this using forge
+The `attackWinner` contract exploits a reentrancy vulnerability in the `Challenge` contract by using a fallback function. Here’s a concise breakdown:
+
+1. **`attackWinner` Constructor**: Initializes the contract with the address of the target `Challenge` contract.
+    
+2. **`bankai` Function**: Calls `exploit_me` on `Challenge`, passing a name to start the exploit.
+    
+3. **Fallback Function**: Triggered during reentrancy, it toggles `lock` in the `Challenge` contract by calling `lock_me`, bypassing a security check in `exploit_me`.
+    
+
+In summary, `attackWinner` uses reentrancy to manipulate `lock` in `Challenge`, allowing it to add itself to the winners list in `Challenge`.
+
+Lets deploy the attack contract using foundry forge
 
 ```
 ┌──(bl4ck4non💀bl4ck4non-sec)-[~/Documents/web3/foundry/learninggg_foundryyyy]

@@ -111,8 +111,9 @@ Transaction hash: 0x650f0540f8ab4636da94695032be758ae909ca136cad42ec4d55b0472cc9
 
 Now, lets call the `getAllwiners()` function
 
-![image](https://github.com/user-attachments/assets/3520bd73-9165-4db8-8bb3-90b6132df3bd)
+![image](https://github.com/user-attachments/assets/65a0b6cb-b295-414c-8a1a-f5b9527287ef)
 
+As you can see from the above screenshot my name `:xD` is included in the array of winners
 
 
 

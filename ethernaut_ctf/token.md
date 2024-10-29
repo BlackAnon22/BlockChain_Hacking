@@ -9,7 +9,7 @@ You are given 20 tokens to start with and you will beat the level if you somehow
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.6.0;
 
-contract Token {
+contract Token { 
     mapping(address => uint256) balances;
     uint256 public totalSupply;
 

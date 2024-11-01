@@ -6,7 +6,7 @@ You are given 20 tokens to start with and you will beat the level if you somehow
 # Contract
       
 ```sol 
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: MIT 
 pragma solidity ^0.6.0;
 
 contract Token { 

@@ -4,7 +4,7 @@ The goal of this level is for you to hack the basic token contract below.
 You are given 20 tokens to start with and you will beat the level if you somehow manage to get your hands on any additional tokens. Preferably a very large amount of tokens.
     
 # Contract 
-       
+        
 ```sol 
 // SPDX-License-Identifier: MIT 
 pragma solidity ^0.6.0;

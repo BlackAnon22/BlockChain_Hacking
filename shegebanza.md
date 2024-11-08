@@ -2,5 +2,7 @@
 
 Bruhhh
 
-I can't even do anything today
+I can't do shii
+
+
 

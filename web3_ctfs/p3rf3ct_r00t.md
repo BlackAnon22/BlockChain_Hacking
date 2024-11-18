@@ -4,5 +4,6 @@ Checking the contract file
 
 ![image](https://github.com/user-attachments/assets/cf9dca96-1c7e-429a-a3ef-c9c10528cabf)
 
+This is a simple contract actually
 
 ![image](https://github.com/user-attachments/assets/dbea117a-d9e7-4f16-a002-d8892c5bcacf)

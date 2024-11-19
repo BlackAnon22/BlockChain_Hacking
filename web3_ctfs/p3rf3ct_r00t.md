@@ -6,4 +6,8 @@ Checking the contract file
 
 This is a simple contract actually
 
+What does this contract do??
+
+
+
 ![image](https://github.com/user-attachments/assets/dbea117a-d9e7-4f16-a002-d8892c5bcacf)

@@ -21,3 +21,5 @@ There's nothing private when it comes to the blockchain actually, this is becaus
 The private variable `_flag` is stored in a storage of index `0`, so I can call the content of this variable by using foundry cast
 
 ![image](https://github.com/user-attachments/assets/dbea117a-d9e7-4f16-a002-d8892c5bcacf)
+
+FLAG:-```r00t{

@@ -45,6 +45,7 @@ Lets start out by getting my balance
 Checking the contract balance
 
 ![image](https://github.com/user-attachments/assets/cf26221b-92ee-4748-8881-4fa97e7d9537)
+![image](https://github.com/user-attachments/assets/18d6dcfb-5240-416e-806a-4688e4b89d4a)
 
 
 

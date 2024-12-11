@@ -46,7 +46,7 @@ Checking the contract balance
 
 ![image](https://github.com/user-attachments/assets/18d6dcfb-5240-416e-806a-4688e4b89d4a)
 
-
+The balance in the contract is ` 0.0055 ETH`
 
 
 

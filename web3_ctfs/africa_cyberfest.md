@@ -85,12 +85,17 @@ If you recall the task of this chall is to submit the hexcode calldata of a tran
 
 From the solidity snippet above the transaction won't revert if `function_selector == 33382`, so what I did was convert `33382` to hex
 
+I used [this](https://www.dcode.fr/hexadecimal-system) to convert
 
+![image](https://github.com/user-attachments/assets/64e2afdf-0fd3-4363-b0cb-fcab80499b32)
 
+That's the flag
 
+FLAG:-```ACTF{0x8266}```
 
+--------------------------------
 
-
+Till Next TIme :xD
 
 
 

@@ -7,7 +7,7 @@ Nuk's crypto assets makes him a diety to some.
 We have to show the world he got it through illegal means.
  
 You have to pull the hack off too
-
+ 
 Goodluck
  
 ## Contract Address  

@@ -59,6 +59,9 @@ Upon downloading the file I got this value
 ```
 6182665f351415600b57005b5f80fd
 ```
+This is an EVM ByteCode, so we can use an online bytecode decompiler to decompile
+
+Lets use [this](https://ethervm.io/decompile)
 
 
 

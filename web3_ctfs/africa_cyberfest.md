@@ -81,6 +81,9 @@ function __function_selector__( function_selector) public payable {
 ```
 The provided Solidity function checks if the `function_selector` equals `33382`. If it does, the function proceeds; otherwise, it reverts the transaction. This is likely used as a security mechanism to ensure that only specific function calls with the correct selector are executed in the contract, and it can also accept Ether via the `payable` modifier.
 
+If you recall the task of this chall is to submit the hexcode calldata of a transaction that will not revert (which basically is the key)
+
+From the solidity snippet above the transaction won't revert if `function_selector == 33382`, so what I did was convert `33382` to hex
 
 
 

@@ -48,10 +48,17 @@ Checking the contract balance
 
 The balance in the contract is ` 0.0055 ETH`
 
+--------------------
 
+# Challenge Name: ByteOps
 
+![image](https://github.com/user-attachments/assets/50f367dd-1c05-474f-b98f-83e7f53ff827)
 
+Upon downloading the file I got this value
 
+```
+6182665f351415600b57005b5f80fd
+```
 
 
 

@@ -74,6 +74,11 @@ I actually can't read this so I had to look for the decompiled version
 
 ![image](https://github.com/user-attachments/assets/6b550559-1373-4871-82cd-c9293ee1820f)
 
+```sol
+function __function_selector__( function_selector) public payable { 
+    require(function_selector == 33382);
+}
+```
 
 
 

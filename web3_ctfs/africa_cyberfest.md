@@ -54,6 +54,8 @@ The balance in the contract is ` 0.0055 ETH`
 
 ![image](https://github.com/user-attachments/assets/50f367dd-1c05-474f-b98f-83e7f53ff827)
 
+The task basically is to submit the hexcode gotten after solving the chall
+
 Upon downloading the file I got this value
 
 ```

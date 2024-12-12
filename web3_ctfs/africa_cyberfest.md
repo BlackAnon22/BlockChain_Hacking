@@ -65,6 +65,15 @@ This is an EVM ByteCode, so we can use an online bytecode decompiler to decompil
 
 Lets use [this](https://ethervm.io/decompile)
 
+![image](https://github.com/user-attachments/assets/144f4474-124d-4c5c-9c3b-7159fb09b9e5)
+![image](https://github.com/user-attachments/assets/ec44b445-c69d-4804-9bed-c63f5d4448ae)
+
+This is a code snippet written in EVM (Ethereum Virtual Machine) bytecode. Specifically, it appears to be a smart contract written in a low-level, assembly-like language used for Ethereum smart contracts.
+
+I actually can't read this so I had to look for the decompiled version
+
+![image](https://github.com/user-attachments/assets/6b550559-1373-4871-82cd-c9293ee1820f)
+
 
 
 

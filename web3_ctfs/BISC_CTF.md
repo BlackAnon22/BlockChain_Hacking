@@ -11,7 +11,7 @@ The task here is to get the flag
 
 ## Contract
 
-```sol
+```sol 
 // SPDX-License-Identifier: MIT
 pragma solidity >= 0.7.0 < 0.9.0;
 

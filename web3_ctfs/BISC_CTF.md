@@ -13,7 +13,7 @@ The task here is to get the flag
 
 ```sol 
 // SPDX-License-Identifier: MIT
-pragma solidity >= 0.7.0 < 0.9.0;
+pragma solidity >= 0.7.0 < 0.9.0; 
 
 contract Safe {
     address public owner;

@@ -2,7 +2,7 @@
 
 ## Task
 
-The task here is to get the flag 
+The task here is to get the flag  
  
 ## Contract Address
 

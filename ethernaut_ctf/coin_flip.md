@@ -44,6 +44,8 @@ The `CoinFlip` contract is a game where users guess the outcome of a coin flip b
 
 
 
+Might use foundry for this, 
+
 
 
 

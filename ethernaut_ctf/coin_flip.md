@@ -4,7 +4,7 @@ This is a coin flipping game where you need to build up your winning streak by g
  
 ## Contract
  
-```sol
+```sol 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 

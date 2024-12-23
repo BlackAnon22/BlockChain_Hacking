@@ -15,7 +15,7 @@ contract HelperConfig is Script {
 
     NetworkConfig public activeNetworkConfig;
 
-    struct NetworkConfig {
+    struct NetworkConfig { 
         address priceFeed; // ETH/USD price feed address
     }
 
